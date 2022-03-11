@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/11 16:24:34 by yobougre         ###   ########.fr       */
+/*   Created: 2021/11/22 16:19:06 by yobougre          #+#    #+#             */
+/*   Updated: 2021/11/22 16:19:09 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
-# include "struct.h"
-# include <stdio.h>
-# include <math.h>
-# include "../minilibx-linux/mlx.h"
-
-#endif
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}

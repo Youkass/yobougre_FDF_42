@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/11 16:24:34 by yobougre         ###   ########.fr       */
+/*   Created: 2021/11/22 16:21:58 by yobougre          #+#    #+#             */
+/*   Updated: 2021/11/22 16:42:43 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
-# include "struct.h"
-# include <stdio.h>
-# include <math.h>
-# include "../minilibx-linux/mlx.h"
+#include "libft.h"
 
-#endif
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*a;
+	unsigned char	*b;
+	size_t			i;
+
+	a = (unsigned char *)dest;
+	b = (unsigned char *)src;
+	i = 0;
+	if (!dest && !src)
+		return (dest);
+	while (i < n)
+	{
+		a[i] = b[i];
+		i++;
+	}
+	return (dest);
+}

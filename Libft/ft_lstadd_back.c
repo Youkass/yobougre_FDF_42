@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/11 16:24:34 by yobougre         ###   ########.fr       */
+/*   Created: 2021/11/22 16:20:16 by yobougre          #+#    #+#             */
+/*   Updated: 2021/11/24 18:06:24 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
-# include "struct.h"
-# include <stdio.h>
-# include <math.h>
-# include "../minilibx-linux/mlx.h"
+#include <stdlib.h>
+#include "libft.h"
 
-#endif
+void	ft_lstadd_back(t_list **alst, t_list *new)
+{
+	t_list	*tmp;
+
+	tmp = *alst;
+	if (!(*alst))
+	{
+		*alst = new;
+		return ;
+	}
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
+}

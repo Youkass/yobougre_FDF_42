@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/11 16:24:34 by yobougre         ###   ########.fr       */
+/*   Created: 2021/11/22 16:20:37 by yobougre          #+#    #+#             */
+/*   Updated: 2021/11/23 11:24:40 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
-# include "struct.h"
-# include <stdio.h>
-# include <math.h>
-# include "../minilibx-linux/mlx.h"
+#include <stdlib.h>
+#include "libft.h"
 
-#endif
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (lst)
+	{
+		(*del)(lst->content);
+		free(lst);
+	}
+}

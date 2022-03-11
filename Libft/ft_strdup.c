@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/11 16:24:34 by yobougre         ###   ########.fr       */
+/*   Created: 2021/11/22 16:23:10 by yobougre          #+#    #+#             */
+/*   Updated: 2021/11/24 21:19:10 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
-# include "struct.h"
-# include <stdio.h>
-# include <math.h>
-# include "../minilibx-linux/mlx.h"
+#include <stdlib.h>
+#include "libft.h"
 
-#endif
+char	*ft_strdup(char const *s1)
+{
+	char	*output;
+	size_t	i;
+
+	output = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!output)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		output[i] = s1[i];
+		i++;
+	}
+	output[i] = '\0';
+	return (output);
+}
