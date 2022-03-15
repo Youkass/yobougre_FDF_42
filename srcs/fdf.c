@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/15 14:38:12 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:01:11 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 int	main(void)
 {
 	void	*mlx;
-	void	*mlx_win;
+	void	*img;
 
 	(void)mlx_win;
+	(void)img;
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 800, 400, "Wassup world\n");
+	img = mlx_new_image(mlx , 800, 400);
 	mlx_loop(mlx);
 }
