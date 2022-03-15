@@ -6,7 +6,7 @@
 #    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/15 15:09:21 by yobougre         ###   ########.fr        #
+#    Updated: 2022/03/15 17:09:45 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,12 +43,12 @@ $(NAME): $(MLX) $(OBJS) $(INC)
 		 @echo "fdf : compiled"
 
 $(MLX):
-		cd minilibx-linux && ./configure
+		cd mlx && ./configure
 		@echo "fdf : minilibx compiled" 
 clean:
 		@$(MAKE) -C libft clean
 		@$(RM) $(OBJS)
-		cd minilibx-linux && ./configure clean
+		cd mlx && ./configure clean
 		@echo "fdf : objects has been erased"
 
 fclean:	clean

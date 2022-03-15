@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/15 16:01:11 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/15 17:05:41 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(void)
 {
 	void	*mlx;
 	void	*img;
+	void	*mlx_win;
 
 	(void)mlx_win;
 	(void)img;
