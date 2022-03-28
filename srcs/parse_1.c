@@ -6,38 +6,36 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 12:14:30 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:35:22 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-static int	ft_split_len(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		++i;
-	return (i);
-}
-
-static int	ft_fill_int_tab(t_map_line *map, char *line)
+int	ft_fill_int_tab(t_map_line *map, char **lines)
 {
 	char	**tmp_split;
 	int		i;
 
-	tmp_split = ft_split(line, ' ');
-	if (!tmp_split)
+	map->lines = malloc(sizeof(int *) * map->col_len);
+	if (!map->lines)
 		return (-1);
-	free(line);
-	map->line = malloc(sizeof(int *) * map->col_len);
-	if (!map->line)
-		return (ft_free(tmp_split), -1);
 	i = 0;
+	while (i < map->col_len)
+	{
+		tmp_split = ft_split(lines[i], ' ');
+		free(lines[i]);
+		if (!tmp_split)
+			return (-1);
+		map->lines[i] = ft_fill_lines(tmp_split);
+		if (!map->lines[i])
+			return (-1);
+		++i;
+	}
+	return (1);
 }
 
-static char	**ft_split_line(char *line)
+char	**ft_split_line(char *line)
 {
 	char	**output;
 
