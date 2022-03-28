@@ -6,13 +6,13 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/15 14:27:36 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/24 08:20:52 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-void	ft_putstr_f(char *s)
+int	ft_parse(t_map_line *map, char *pathname)
 {
-	write(1, s, ft_strlen(s));
+
 }

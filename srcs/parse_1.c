@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/22 16:50:47 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/24 08:09:23 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,18 @@ static int	ft_split_len(char **tab)
 	return (i);
 }
 
-static int	ft_fill_int_tab(int *tab, char *line)
+static int	ft_fill_int_tab(t_map_line *map, char *line)
 {
 	char	**tmp_split;
+	int		i;
 
 	tmp_split = ft_split(line, ' ');
 	if (!tmp_split)
 		return (-1);
-	
+	free(line);
+	map->line = malloc(sizeof(int *) * map->line_len);
+	if (!map->line)
+		return (ft_free(tmp_split), -1);
 }
 
 static char	**ft_split_line(char *line)
