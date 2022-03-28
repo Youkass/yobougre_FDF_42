@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 16:29:26 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:38:05 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_read_map(char *name, t_map_line *map)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
-		output = ft_strjoin_pimp(output, line); 
+		output = ft_strjoin(output, line); 
 		if (!output)
 			return (NULL);
 		free(line);
