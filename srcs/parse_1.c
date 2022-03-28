@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 16:14:20 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:29:26 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_fill_int_tab(t_map_line *map, char **lines)
 		free(lines[i]);
 		if (!tmp_split)
 			return (-1);
+		map->line_len = ft_tab_size(tmp_split);
 		map->lines[i] = ft_fill_lines(tmp_split);
 		if (!map->lines[i])
 			return (-1);
@@ -53,15 +54,12 @@ char	*ft_read_map(char *name, t_map_line *map)
 	int		i;
 
 	i = 0;
-	output = malloc(sizeof(char) * 1);
-	*output = 0;
 	fd = open(name, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
 	while (1)
 	{
 		line = get_next_line(fd);
-		printf("%s", line);
 		if (!line)
 			break ;
 		output = ft_strjoin_pimp(output, line); 
