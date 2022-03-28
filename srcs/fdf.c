@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/22 16:50:50 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/28 12:11:48 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(void)
 	mlx_win = mlx_new_window(mlx, HEIGHT, WIDTH, "Wassup world");
 	img.img = mlx_new_image(mlx , HEIGHT, WIDTH);
 	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
-	y = HEIGHT / 2;
+	y = 0;
 	i = WIDTH / 2;
-	while (y < )
+	while (y < 50)
 	{
 		i = 0;
 		while (i < 50)

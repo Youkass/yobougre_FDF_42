@@ -6,12 +6,13 @@
 #    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/23 17:51:23 by yobougre         ###   ########.fr        #
+#    Updated: 2022/03/28 12:12:34 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS=	srcs/fdf.c\
-		srcs/ft_free.c\
+		srcs/mlx_utils_1.c
+#		srcs/ft_free.c\
 		srcs/parse_1.c
 
 
