@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:02 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 14:17:01 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:14:23 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,7 @@ void	ft_free_int_tab(int **tab, int size);
 int	*ft_fill_lines(char **values);
 int	ft_tab_size(char **tab);
 int	*ft_fill_lines(char **values);
+void    ft_draw_line(t_float *pos, t_data *img);
+void	ft_draw_x(t_data *img);
+void	ft_init(t_float *pos, float seg_size);
 #endif

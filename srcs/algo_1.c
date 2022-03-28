@@ -12,12 +12,35 @@
 
 #include "../includes/fdf_header.h"
 
-void	ft_draw(t_map_line map)
+void	ft_init(t_float *pos, float seg_size)
 {
-
+	pos->x1 = WIDTH * 0.1;
+	pos->y1 = HEIGHT * 0.2;
+	pos->x2 = pos->x1 + seg_size;
+	pos->y2 = pos->y1 + seg_size;
 }
 
-void    ft_draw_line(t_float *pos, mlx_data *data, t_data *img)
+void	ft_draw_x(t_data *img)
+{
+	float	seg_size;
+	int		line;
+	t_float	pos;
+
+	seg_size = 10;
+	ft_init(&pos, seg_size);
+	line = 0;
+	while (line < img->map->line_len)
+	{
+		ft_draw_line(&pos, img);
+		pos.x1 += seg_size;
+		pos.y1 += seg_size;
+		pos.x2 = pos.x1 + seg_size;
+		pos.y2 = pos.y1 + seg_size;
+		++line;
+	}
+}
+
+void    ft_draw_line(t_float *pos, t_data *img)
 {
 	t_draw	draw;	
 
@@ -41,5 +64,4 @@ void    ft_draw_line(t_float *pos, mlx_data *data, t_data *img)
         }
         draw.x++;
     }
-    //mlx_put_image_to_window(data->mlx, data->mlx_win, img->img, 0 , 0);
 }

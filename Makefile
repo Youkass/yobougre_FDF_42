@@ -6,7 +6,7 @@
 #    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/28 13:36:13 by yobougre         ###   ########.fr        #
+#    Updated: 2022/03/28 16:14:23 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ SRCS=	srcs/fdf.c\
 		srcs/mlx_utils_1.c\
 		srcs/ft_free.c\
 		srcs/utils.c\
+		srcs/algo_1.c\
 		srcs/parse_1.c
 
 
@@ -22,7 +23,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror -g3
+CFLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3
 
 MLX= mlx_Linux
 
