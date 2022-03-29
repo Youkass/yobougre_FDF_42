@@ -12,14 +12,13 @@
 
 #include "../includes/fdf_header.h"
 
-void	ft_draw_x(t_data *img)
+void	ft_draw_x(t_data *img, float seg_size)
 {
-	float	seg_size;
 	int		line;
 	int		i;
 	t_float	pos;
+	t_float	proj;
 
-	seg_size = 25;
 	ft_init_x(&pos, seg_size);
 	line = 0;
 	while (line < img->map.col_len)
@@ -27,10 +26,10 @@ void	ft_draw_x(t_data *img)
 		i = 0;
 		while (i < img->map.line_len - 1)
 		{
-			ft_draw_line_x(&pos, img);
+			proj = ft_projection(pos, 0);
+			ft_draw_line_x(&proj, img);
 			pos.x1 += seg_size;
 			pos.x2 = pos.x1 + seg_size;
-//			ft_projection(&pos.x2, &pos.y2, 0);
 			i++;
 		}
 		pos.x1 = WIDTH * 0.1;
@@ -41,14 +40,13 @@ void	ft_draw_x(t_data *img)
 	}
 }
 
-void	ft_draw_y(t_data *img)
+void	ft_draw_y(t_data *img, float seg_size)
 {
-	float	seg_size;
 	t_float	pos;
 	int		i;
 	int		line;
+	t_float	proj;
 
-	seg_size = 25;
 	ft_init_y(&pos, seg_size);
 	line = 0;
 	while (line < img->map.line_len)
@@ -56,10 +54,10 @@ void	ft_draw_y(t_data *img)
 		i = 0;
 		while (i < img->map.col_len - 1)
 		{
-			ft_draw_line_y(&pos, img);
+			proj = ft_projection(pos, 0);
+			ft_draw_line_y(&proj, img);
 			pos.y1 += seg_size;
 			pos.y2 = pos.y1 + seg_size;
-//k			ft_projection(&pos.x2, &pos.y2, 0);
 			i++;
 		}
 		pos.y1 = HEIGHT * 0.1;

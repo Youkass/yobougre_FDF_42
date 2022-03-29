@@ -1,62 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   parse_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
+/*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
 /*   Updated: 2022/03/29 19:54:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef STRUCT_H
-# define STRUCT_H
 
-typedef struct s_mlx_data
-{
-	void	*mlx;
-	void	*mlx_win;
-}	mlx_data;
+#include "../includes/fdf_header.h"
 
-typedef struct s_map
+t_point	*ft_parse_point(t_data *data)
 {
-	int	line_len;
-	int	col_len;
-	int	**lines;
-}	t_map_line;
+	t_point	*output;
+	int		i;
+	int		j;
+	int		k;
 
-typedef struct s_data
-{
-	void		*img;
-	char		*addr;
-	int			bpp;
-	int			line_len;
-	int			endian;
-	t_point		*coord;
-	t_map_line	map;
-}	t_data;
-
-typedef struct s_float
-{
-	float	x1;
-	float	y1;
-	float	x2;
-	float	y2;
-}	t_float;
-
-typedef struct s_point
-{
-	float	x;
-	float	y;
-	float	z;
-}	t_point;
-
-typedef struct	s_draw
-{
-	float	dx;
-	float	dy;
-	float	p;
-	float	x;
-	float	y;
-}	t_draw;
-#endif
+	output = malloc(sizeof(t_point) * data->map->col_len * data->map->line_len);
+	if (!output)
+		return (NULL);
+	i = 0;
+	k = 0;
+	while (i < data->map->col_len)
+	{
+		j = 0;
+		while (j < data->map->line_len)
+		{
+			output[k]->z = data->map->line[i][j];
+			output[k]->x = j;
+			output[k]->y = i;
+			++k;
+			++j;
+		}
+		++i;
+	}
+	return (output);
+}
