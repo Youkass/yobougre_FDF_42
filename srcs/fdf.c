@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/29 14:12:18 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/29 15:27:52 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void)
 	if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map("42.fdf", &img.map))) < 0)
 		return (-1);
 	ft_draw_x(&img);
+	ft_draw_y(&img);
 	mlx_put_image_to_window(data.mlx, data.mlx_win, img.img, 0 , 0);
 	mlx_loop(data.mlx);
 }
