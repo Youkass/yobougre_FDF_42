@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 14:20:48 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:12:20 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
@@ -32,7 +32,7 @@ typedef struct s_data
 	int			bpp;
 	int			line_len;
 	int			endian;
-	t_map_line	*map;
+	t_map_line	map;
 }	t_data;
 
 typedef struct s_float

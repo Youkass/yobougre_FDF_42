@@ -12,11 +12,19 @@
 
 #include "../includes/fdf_header.h"
 
-void	ft_init(t_float *pos, float seg_size)
+void	ft_init_x(t_float *pos, float seg_size)
 {
 	pos->x1 = WIDTH * 0.1;
-	pos->y1 = HEIGHT * 0.2;
+	pos->y1 = HEIGHT * 0.1;
 	pos->x2 = pos->x1 + seg_size;
+	pos->y2 = pos->y1;
+}
+
+void	ft_init_y(t_float *pos, float seg_size)
+{
+	pos->x1 = WIDTH * 0.1;
+	pos->y1 = HEIGHT * 0.1;
+	pos->x2 = pos->x1;
 	pos->y2 = pos->y1 + seg_size;
 }
 
@@ -24,17 +32,23 @@ void	ft_draw_x(t_data *img)
 {
 	float	seg_size;
 	int		line;
+	int		i;
 	t_float	pos;
 
 	seg_size = 10;
-	ft_init(&pos, seg_size);
+	ft_init_x(&pos, seg_size);
 	line = 0;
-	while (line < img->map->line_len)
+	while (line < img->map->col_len)
 	{
-		ft_draw_line(&pos, img);
-		pos.x1 += seg_size;
-		pos.y1 += seg_size;
-		pos.x2 = pos.x1 + seg_size;
+		i = 0;
+		while (i < img->map->line_len)
+		{
+			ft_draw_line(&pos, img);
+			pos.x1 += seg_size;
+			pos.y1 += seg_size;
+			pos.x2 = pos.x1 + seg_size;
+			i++;
+		}
 		pos.y2 = pos.y1 + seg_size;
 		++line;
 	}
