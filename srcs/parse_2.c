@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 15:38:39 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:50:37 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,26 @@ t_point ft_toIsometric2D(float x,float y,float z)
 {
 	t_point	output;
 
-	output.x = (x - z)/sqrt(2);
-	output.y =(x + 2 * y + z)/sqrt(6);
+	output.x = x + y;
+	output.y = y - x / 2;
 	output.z = z;
 	return (output);
+}
+
+void	ft_draw(mlx_data *data, t_data img)
+{
+	int	i;
+	t_float	point;
+
+	i = 0;
+	while (i < img.map.col_len * img.map.line_len - 1)
+	{
+		point.x1 = img.coord[i].x;
+		point.x2 = img.coord[i + 1].x;
+		point.y1 = img.coord[i].y;
+		point.y2 = img.coord[i + 1].y;
+		draw_line(data, point);
+		++i;
+	}
 }
 

@@ -116,3 +116,28 @@ void    ft_draw_line_x(t_float *pos, t_data *img)
 		draw.x++;
 	}
 }
+
+int	draw_line(mlx_data *data, t_float pos)
+{
+	float	delta_x;
+	float	delta_y;
+	float	pixel_x;
+	float	pixel_y;
+	int		pixels;
+
+	delta_x = pos.x2 - pos.x1;
+	delta_y = pos.y2 - pos.y1;
+	pixels = sqrt((delta_x * delta_x) + (delta_y * delta_y));
+	delta_x /= pixels;
+	delta_y /= pixels;
+	pixel_x = pos.x1;
+	pixel_y = pos.y1;
+	while (pixels)
+	{
+		mlx_pixel_put(data->mlx, data->mlx_win, pixel_x, pixel_y, 0x00FF0000);
+		pixel_x += delta_x;
+		pixel_y += delta_y;
+		--pixels;
+	}
+	return (0);
+}

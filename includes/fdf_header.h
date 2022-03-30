@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:02 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 14:40:57 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:48:21 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ t_point   ft_projection(int x, int y, int z);
 t_point	*ft_parse_point(t_data *data);
 void	ft_proj_point(t_data *img);
 t_point ft_toIsometric2D(float x,float y,float z);
+int	draw_line(mlx_data *data, t_float pos);
+void	ft_draw(mlx_data *data, t_data img);
 #endif

@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 15:34:48 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:48:08 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(void)
 {
 	mlx_data	data;
 	t_data		img;
-	int			i = 0;
 
 	data.mlx = mlx_init();
 	data.mlx_win = mlx_new_window(data.mlx, HEIGHT, WIDTH, "Wassup world");
@@ -28,15 +27,9 @@ int	main(void)
 	if (!img.coord)
 		return (-1);
 	ft_proj_point(&img);
-	printf("%d\n", img.map.line_len * img.map.col_len);
-	while (i < img.map.line_len * img.map.col_len)
-	{
-		printf("x : %f y : %f z : %f\n", img.coord[i].x, img.coord[i].y, img.coord[i].z);
-		printf("i : %d\n", i);
-		i++;
-	}
-	ft_draw_x(&img, 25);
-	ft_draw_y(&img, 25);
+	ft_draw(&data, img);
+//	ft_draw_x(&img, 25);
+//	ft_draw_y(&img, 25);
 	mlx_put_image_to_window(data.mlx, data.mlx_win, img.img, 0 , 0);
 	mlx_loop(data.mlx);
 }
