@@ -12,54 +12,49 @@
 
 #include "../includes/fdf_header.h"
 
-void	ft_draw_x(t_data *img, float seg_size)
+void	ft_draw_x(t_data *img)
 {
 	int		line;
 	int		i;
 	t_float	pos;
 
-	ft_init_x(&pos, seg_size);
 	line = 0;
 	while (line < img->map.col_len)
 	{
 		i = 0;
 		while (i < img->map.line_len - 1)
 		{
+			pos.x1 = img->coord[i].x;
+			pos.x2 = img->coord[i + 1].x;
+			pos.y1 = img->coord[i].y;
+			pos.y2 = img->coord[i + 1].y;
 			ft_draw_line_x(&pos, img);
-			pos.x1 += seg_size;
-			pos.x2 = pos.x1 + seg_size;
 			i++;
 		}
-		pos.x1 = WIDTH * 0.1;
-		pos.y1 += seg_size;
-		pos.x2 = pos.x1 + seg_size;
-		pos.y2 = pos.y1;
 		++line;
 	}
 }
 
-void	ft_draw_y(t_data *img, float seg_size)
+void	ft_draw_y(t_data *img)
 {
-	t_float	pos;
-	int		i;
-	int		line;
 
-	ft_init_y(&pos, seg_size);
+	int		line;
+	int		i;
+	t_float	pos;
+
 	line = 0;
-	while (line < img->map.line_len)
+	while (line < img->map.col_len)
 	{
 		i = 0;
-		while (i < img->map.col_len - 1)
+		while (i < img->map.line_len - 1)
 		{
-			ft_draw_line_y(&pos, img);
-			pos.y1 += seg_size;
-			pos.y2 = pos.y1 + seg_size;
+			pos.x1 = img->coord[i].x;
+			pos.x2 = img->coord[i + 1].x;
+			pos.y1 = img->coord[i].y;
+			pos.y2 = img->coord[i + 1].y;
+			ft_draw_line_x(&pos, img);
 			i++;
 		}
-		pos.y1 = HEIGHT * 0.1;
-		pos.y2 = pos.y1 + seg_size;
-		pos.x1 += seg_size;
-		pos.x2 = pos.x1;
 		++line;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 16:48:08 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 17:00:15 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ int	main(void)
 	if (!img.coord)
 		return (-1);
 	ft_proj_point(&img);
-	ft_draw(&data, img);
-//	ft_draw_x(&img, 25);
-//	ft_draw_y(&img, 25);
+	ft_draw_x(&img);
+	ft_draw_y(&img);
 	mlx_put_image_to_window(data.mlx, data.mlx_win, img.img, 0 , 0);
 	mlx_loop(data.mlx);
 }

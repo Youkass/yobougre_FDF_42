@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:02 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 16:48:21 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 17:00:13 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	*ft_fill_lines(char **values);
 int	ft_tab_size(char **tab);
 int	*ft_fill_lines(char **values);
 void    ft_draw_line_x(t_float *pos, t_data *img);
-void	ft_draw_x(t_data *img, float seg_size);
+void	ft_draw_x(t_data *img);
 void	ft_init_x(t_float *pos, float seg_size);
 void	ft_init_y(t_float *pos, float seg_size);
-void	ft_draw_y(t_data *img, float seg_size);
+void	ft_draw_y(t_data *img);
 void    ft_draw_line_y(t_float *pos, t_data *img);
 t_point   ft_projection(int x, int y, int z);
 t_point	*ft_parse_point(t_data *data);
