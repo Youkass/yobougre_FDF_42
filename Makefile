@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/29 16:41:13 by yobougre         ###   ########.fr        #
+#    Updated: 2022/03/30 11:55:38 by hrecolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS=	srcs/fdf.c\
 		srcs/algo_1.c\
 		srcs/utils_init.c\
 		srcs/algo_2.c\
-		srcs/parse_1.c
+		srcs/parse_1.c \
+		srcs/parse_2.c
 
 
 INC=	includes/struct.h\
@@ -25,7 +26,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS=	-Wall -Wextra -Werror
 MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)
