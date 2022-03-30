@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:08:05 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/29 16:38:37 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 11:44:04 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_init_x(t_float *pos, float seg_size)
 	pos->y1 = HEIGHT * 0.1;
 	pos->x2 = pos->x1 + seg_size;
 	pos->y2 = pos->y1;
-	ft_projection(&pos->x2, &pos->y2, 0);
+//	ft_projection(&pos->x2, &pos->y2, 0);
 }
 
 void	ft_init_y(t_float *pos, float seg_size)
@@ -27,5 +27,5 @@ void	ft_init_y(t_float *pos, float seg_size)
 	pos->y1 = HEIGHT * 0.1;
 	pos->x2 = pos->x1;
 	pos->y2 = pos->y1 + seg_size;
-	ft_projection(&pos->x2, &pos->y2, 0);
+//	ft_projection(&pos->x2, &pos->y2, 0);
 }

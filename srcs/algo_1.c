@@ -17,7 +17,6 @@ void	ft_draw_x(t_data *img, float seg_size)
 	int		line;
 	int		i;
 	t_float	pos;
-	t_float	proj;
 
 	ft_init_x(&pos, seg_size);
 	line = 0;
@@ -26,15 +25,14 @@ void	ft_draw_x(t_data *img, float seg_size)
 		i = 0;
 		while (i < img->map.line_len - 1)
 		{
-			proj = ft_projection(pos, 0);
-			ft_draw_line_x(&proj, img);
+			ft_draw_line_x(&pos, img);
 			pos.x1 += seg_size;
 			pos.x2 = pos.x1 + seg_size;
 			i++;
 		}
 		pos.x1 = WIDTH * 0.1;
-		pos.x2 = pos.x1 + seg_size;
 		pos.y1 += seg_size;
+		pos.x2 = pos.x1 + seg_size;
 		pos.y2 = pos.y1;
 		++line;
 	}
@@ -45,7 +43,6 @@ void	ft_draw_y(t_data *img, float seg_size)
 	t_float	pos;
 	int		i;
 	int		line;
-	t_float	proj;
 
 	ft_init_y(&pos, seg_size);
 	line = 0;
@@ -54,8 +51,7 @@ void	ft_draw_y(t_data *img, float seg_size)
 		i = 0;
 		while (i < img->map.col_len - 1)
 		{
-			proj = ft_projection(pos, 0);
-			ft_draw_line_y(&proj, img);
+			ft_draw_line_y(&pos, img);
 			pos.y1 += seg_size;
 			pos.y2 = pos.y1 + seg_size;
 			i++;

@@ -6,11 +6,18 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/29 19:54:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 11:42:45 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
 # define STRUCT_H
+
+typedef struct s_point
+{
+	float	x;
+	float	y;
+	float	z;
+}	t_point;
 
 typedef struct s_mlx_data
 {
@@ -43,13 +50,6 @@ typedef struct s_float
 	float	x2;
 	float	y2;
 }	t_float;
-
-typedef struct s_point
-{
-	float	x;
-	float	y;
-	float	z;
-}	t_point;
 
 typedef struct	s_draw
 {

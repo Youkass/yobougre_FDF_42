@@ -6,11 +6,12 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/29 19:54:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 11:08:37 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
+/*
 
 t_point	*ft_parse_point(t_data *data)
 {
@@ -38,4 +39,4 @@ t_point	*ft_parse_point(t_data *data)
 		++i;
 	}
 	return (output);
-}
+}*/
