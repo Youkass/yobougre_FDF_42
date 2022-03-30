@@ -6,13 +6,13 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 11:50:58 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 12:01:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-t_float   ft_projection(int x, int y, int z)
+t_point   ft_projection(int x, int y, int z)
 {
 	int		angle;
 	int		rad_120;
@@ -26,5 +26,4 @@ t_float   ft_projection(int x, int y, int z)
 		+ y * sin(angle + rad_120) + z * sin(angle - rad_120);
 	return (proj);
 }
-
 

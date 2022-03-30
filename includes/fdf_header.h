@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:02 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 11:43:36 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 12:11:33 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	ft_init_x(t_float *pos, float seg_size);
 void	ft_init_y(t_float *pos, float seg_size);
 void	ft_draw_y(t_data *img, float seg_size);
 void    ft_draw_line_y(t_float *pos, t_data *img);
-//t_float   ft_projection(t_float pos, int z);
+t_point   ft_projection(int x, int y, int z);
+t_point	*ft_parse_point(t_data *data);
 #endif
