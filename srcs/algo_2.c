@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 13:59:37 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/03/30 14:36:01 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,14 @@ void    ft_draw_2_point_y(t_float pos, t_data *img)
 t_float	ft_conv_to_iso(float x1, float y1, float x2, float y2)
 {
 	t_float	iso;
-
-	iso.x1 = x1;
-	iso.y1 = y1;
-	iso.x2 = x2;
-	iso.y2 = y2;
+	int		z;
+	
+	z = 1;
+	iso.x1 = (x1 - z) / sqrt(2);
+	iso.y1 = (x1 + 2 * y1 + z) / sqrt(6);
+	iso.x2 = (x2 - z) / sqrt(2);
+	iso.y2 = (x2 + 2 * y2 + z) / sqrt(6);
+	//printf("%f, %f, %f, %f\n", iso.x1, iso.y1, iso.x2, iso.y2);
 	return (iso);
 }
 
