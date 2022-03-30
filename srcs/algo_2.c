@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 12:01:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/30 14:28:31 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_point   ft_projection(int x, int y, int z)
 		+ y * cos(angle + rad_120) + z * cos(angle - rad_120);
 	proj.y = x * sin(angle) 
 		+ y * sin(angle + rad_120) + z * sin(angle - rad_120);
+	proj.z = z;
 	return (proj);
 }
 
