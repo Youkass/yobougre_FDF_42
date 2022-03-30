@@ -38,7 +38,7 @@ void	ft_draw_x(t_data *img, float seg_size)
 	}
 }
 
-void	ft_draw_y(t_data *img, float seg_size)
+/*void	ft_draw_y(t_data *img, float seg_size)
 {
 	t_float	pos;
 	int		i;
@@ -62,7 +62,7 @@ void	ft_draw_y(t_data *img, float seg_size)
 		pos.x2 = pos.x1;
 		++line;
 	}
-}
+}*/
 
 
 void    ft_draw_line_y(t_float *pos, t_data *img)
