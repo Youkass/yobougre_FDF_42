@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:02 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 13:38:38 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/03/31 10:41:09 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	ft_init_y(t_float *pos, float seg_size);
 t_point	*ft_parse_point(t_data *data);
 t_point  ft_projection(float x, float y, float z);
 t_point	*ft_3d_to_2d(t_data *data);
-void	ft_draw_2_point(float x1, float y1, float x2, float y2, t_data *img);
 void	ft_draw(t_data *data);
+float	ft_abs(float nb);
+void	ft_draw_2_point(t_float pts, t_data *data);
 
 #endif

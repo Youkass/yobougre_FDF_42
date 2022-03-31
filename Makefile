@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/30 11:55:38 by hrecolet         ###   ########.fr        #
+#    Updated: 2022/03/31 11:14:34 by hrecolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ SRCS=	srcs/fdf.c\
 		srcs/mlx_utils_1.c\
 		srcs/ft_free.c\
 		srcs/utils.c\
-		srcs/algo_1.c\
 		srcs/utils_init.c\
 		srcs/algo_2.c\
 		srcs/parse_1.c \
-		srcs/parse_2.c
+		srcs/parse_2.c \
+		srcs/ft_draw.c
 
 
 INC=	includes/struct.h\

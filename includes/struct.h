@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 11:42:45 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:48:23 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef STRUCT_H
 # define STRUCT_H
 
@@ -55,8 +56,14 @@ typedef struct	s_draw
 {
 	float	dx;
 	float	dy;
-	float	p;
+	float	dx1;
+	float	dy1;
+	float	px;
+	float	py;
+	float	xe;
+	float	ye;
 	float	x;
 	float	y;
 }	t_draw;
+
 #endif
