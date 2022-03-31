@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/31 17:35:26 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:28:38 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
@@ -50,8 +50,6 @@ typedef struct s_float
 	float	y1;
 	float	x2;
 	float	y2;
-	float	z1;
-	float	z2;
 }	t_float;
 
 typedef struct	s_draw
