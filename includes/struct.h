@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 17:00:14 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:35:26 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
@@ -39,7 +39,8 @@ typedef struct s_data
 	int			bpp;
 	int			line_len;
 	int			endian;
-	t_point		*coord;
+	int			scale;
+	t_point		**coord;
 	t_map_line	map;
 }	t_data;
 
@@ -49,13 +50,20 @@ typedef struct s_float
 	float	y1;
 	float	x2;
 	float	y2;
+	float	z1;
+	float	z2;
 }	t_float;
 
 typedef struct	s_draw
 {
 	float	dx;
 	float	dy;
-	float	p;
+	float	dx1;
+	float	dy1;
+	float	px;
+	float	py;
+	float	xe;
+	float	ye;
 	float	x;
 	float	y;
 }	t_draw;

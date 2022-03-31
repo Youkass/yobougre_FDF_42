@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 17:00:15 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:48:58 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(void)
 	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
 	if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map("Krai.fdf", &img.map))) < 0)
 		return (-1);
+	img.scale = 20;
 	img.coord = ft_parse_point(&img);
 	if (!img.coord)
 		return (-1);

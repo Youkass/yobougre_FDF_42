@@ -1,46 +1,79 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_header.h                                       :+:      :+:    :+:   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 16:25:02 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 17:00:13 by yobougre         ###   ########.fr       */
+/*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
+/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_HEADER_H
 # define FDF_HEADER_H
+
 # include "struct.h"
 # include "includes.h"
-# include "../libft/libft.h" 
-/*=============================================================================*/
-/*				FILE : ft_free.c											   */
 
-void	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
-char	*ft_read_map(char *name, t_map_line *map);
-int		ft_fill_int_tab(t_map_line *map, char **lines);
-char	**ft_split_line(char *line);
-/*=============================================================================*/
-/*				FILE : ft_free.c											   */
+/* -------------------------------------------------------------------------- */
+/*                            FILE = srcs/algo_3.c                            */
+/* -------------------------------------------------------------------------- */
+float	ft_abs(float nb);
+t_draw	ft_init_draw(t_float point);
 
+/* -------------------------------------------------------------------------- */
+/*                           FILE = srcs/parse_2.c                            */
+/* -------------------------------------------------------------------------- */
+t_point	**ft_parse_point(t_data *data);
+
+/* -------------------------------------------------------------------------- */
+/*                            FILE = srcs/algo_2.c                            */
+/* -------------------------------------------------------------------------- */
+void	ft_draw_line(t_float point, t_data *img);
+
+/* -------------------------------------------------------------------------- */
+/*                            FILE = srcs/algo_1.c                            */
+/* -------------------------------------------------------------------------- */
+t_point ft_to_iso(float x,float y,float z);
+void	ft_draw_y(t_data *img);
+void	ft_draw_x(t_data *img);
+void	ft_proj_point(t_data *img);
+
+/* -------------------------------------------------------------------------- */
+/*                             FILE = srcs/fdf.c                              */
+/* -------------------------------------------------------------------------- */
+int	main(void);
+
+/* -------------------------------------------------------------------------- */
+/*                            FILE = srcs/utils.c                             */
+/* -------------------------------------------------------------------------- */
+int	ft_tab_size(char **tab);
+int	*ft_fill_lines(char **values);
+
+/* -------------------------------------------------------------------------- */
+/*                          FILE = srcs/utils_init.c                          */
+/* -------------------------------------------------------------------------- */
+void	ft_init_x(t_float *pos, float seg_size);
+void	ft_init_y(t_float *pos, float seg_size);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = srcs/ft_free.c                            */
+/* -------------------------------------------------------------------------- */
 void	ft_free_tab(char **tab);
 void	ft_free_int_tab(int **tab, int size);
 
-int	*ft_fill_lines(char **values);
-int	ft_tab_size(char **tab);
-int	*ft_fill_lines(char **values);
-void    ft_draw_line_x(t_float *pos, t_data *img);
-void	ft_draw_x(t_data *img);
-void	ft_init_x(t_float *pos, float seg_size);
-void	ft_init_y(t_float *pos, float seg_size);
-void	ft_draw_y(t_data *img);
-void    ft_draw_line_y(t_float *pos, t_data *img);
-t_point   ft_projection(int x, int y, int z);
-t_point	*ft_parse_point(t_data *data);
-void	ft_proj_point(t_data *img);
-t_point ft_toIsometric2D(float x,float y,float z);
-int	draw_line(mlx_data *data, t_float pos);
-void	ft_draw(mlx_data *data, t_data img);
+/* -------------------------------------------------------------------------- */
+/*                         FILE = srcs/mlx_utils_1.c                          */
+/* -------------------------------------------------------------------------- */
+void	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = srcs/parse_1.c                            */
+/* -------------------------------------------------------------------------- */
+int	ft_fill_int_tab(t_map_line *map, char **lines);
+char	**ft_split_line(char *line);
+char	*ft_read_map(char *name, t_map_line *map);
+
+
 #endif

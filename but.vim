@@ -33,7 +33,7 @@ set shortmess=aoO
 argglobal
 %argdel
 $argadd ~/Desktop/FT_42/yobougre_FDF_42
-edit srcs/parse_2.c
+edit srcs/algo_1.c
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -190,12 +190,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 34 - ((27 * winheight(0) + 18) / 36)
+let s:l = 51 - ((10 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-34
-normal! 028|
+51
+normal! 0
 lcd ~/Desktop/FT_42/yobougre_FDF_42
 wincmd w
 argglobal
@@ -323,16 +323,16 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 17) / 35)
+let s:l = 24 - ((23 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 021|
+24
+normal! 019|
 lcd ~/Desktop/FT_42/yobougre_FDF_42
 wincmd w
 argglobal
-if bufexists("~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_1.c") | buffer ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_1.c | else | edit ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_1.c | endif
+if bufexists("~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_2.c") | buffer ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_2.c | else | edit ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_2.c | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -456,12 +456,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 80 - ((33 * winheight(0) + 36) / 72)
+let s:l = 83 - ((55 * winheight(0) + 36) / 72)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-80
-normal! 08|
+83
+normal! 058|
 lcd ~/Desktop/FT_42/yobougre_FDF_42
 wincmd w
 argglobal
@@ -589,16 +589,16 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 42 - ((35 * winheight(0) + 18) / 36)
+let s:l = 39 - ((33 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-42
-normal! 06|
+39
+normal! 026|
 lcd ~/Desktop/FT_42/yobougre_FDF_42
 wincmd w
 argglobal
-if bufexists("~/Desktop/FT_42/yobougre_FDF_42/Makefile") | buffer ~/Desktop/FT_42/yobougre_FDF_42/Makefile | else | edit ~/Desktop/FT_42/yobougre_FDF_42/Makefile | endif
+if bufexists("~/Desktop/FT_42/yobougre_FDF_42/includes/struct.h") | buffer ~/Desktop/FT_42/yobougre_FDF_42/includes/struct.h | else | edit ~/Desktop/FT_42/yobougre_FDF_42/includes/struct.h | endif
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -633,8 +633,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'make'
-setlocal filetype=make
+if &filetype != 'cpp'
+setlocal filetype=cpp
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -700,8 +700,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'make'
-setlocal syntax=make
+if &syntax != 'cpp'
+setlocal syntax=cpp
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -722,15 +722,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 25 - ((24 * winheight(0) + 17) / 35)
+let s:l = 6 - ((5 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-25
-normal! 023|
+6
+normal! 0
 lcd ~/Desktop/FT_42/yobougre_FDF_42
 wincmd w
-2wincmd w
+5wincmd w
 exe '1resize ' . ((&lines * 36 + 37) / 74)
 exe 'vert 1resize ' . ((&columns * 94 + 141) / 282)
 exe '2resize ' . ((&lines * 35 + 37) / 74)
@@ -741,19 +741,19 @@ exe 'vert 4resize ' . ((&columns * 93 + 141) / 282)
 exe '5resize ' . ((&lines * 35 + 37) / 74)
 exe 'vert 5resize ' . ((&columns * 93 + 141) / 282)
 tabnext 1
+badd +56 ~/Desktop/FT_42/yobougre_FDF_42/srcs/parse_2.c
+badd +0 ~/Desktop/FT_42/yobougre_FDF_42/srcs/fdf.c
+badd +19 ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_1.c
+badd +36 ~/Desktop/FT_42/yobougre_FDF_42/includes/fdf_header.h
+badd +20 ~/Desktop/FT_42/yobougre_FDF_42/Makefile
 badd +30 ~/Desktop/FT_42/yobougre_FDF_42/srcs/ft_free.c
-badd +0 ~/Desktop/FT_42/yobougre_FDF_42
-badd +20 ~/Desktop/FT_42/yobougre_FDF_42/srcs/fdf.c
 badd +1 ~/Desktop/FT_42/yobougre_FDF_42/srcs/parse_1.c
-badd +1 ~/Desktop/FT_42/yobougre_FDF_42/includes/fdf_header.h
-badd +28 ~/Desktop/FT_42/yobougre_FDF_42/includes/struct.h
-badd +0 ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_1.c
-badd +24 ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_2.c
-badd +16 ~/Desktop/FT_42/yobougre_FDF_42/srcs/parse_2.c
+badd +68 ~/Desktop/FT_42/yobougre_FDF_42/includes/struct.h
+badd +33 ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_2.c
 badd +1 ~/Desktop/FT_42/yobougre_FDF_42/srcs/fdf
 badd +28 ~/Desktop/FT_42/yobougre_FDF_42/srcs/utils_init.c
-badd +13 ~/Desktop/FT_42/yobougre_FDF_42/srcs/mlx_utils_1.c
-badd +0 ~/Desktop/FT_42/yobougre_FDF_42/Makefile
+badd +23 ~/Desktop/FT_42/yobougre_FDF_42/srcs/mlx_utils_1.c
+badd +15 ~/Desktop/FT_42/yobougre_FDF_42/srcs/algo_3.c
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
