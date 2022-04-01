@@ -6,13 +6,13 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/31 18:46:39 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:34:27 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-static void	ft_first_p(t_float point, t_draw *drw, t_data *img)
+static int	ft_first_p(t_float point, t_draw *drw, t_data *img)
 {
 	if (drw->dx >= 0)
 	{
@@ -26,10 +26,12 @@ static void	ft_first_p(t_float point, t_draw *drw, t_data *img)
 		drw->y = point.y2;
 		drw->xe = point.x1;
 	}
-	ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000);
+	if (!ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000))
+		return (0);
+	return (1);
 }
 
-static void	ft_scnd_p(t_float point, t_draw *drw, t_data *img)
+static int	ft_scnd_p(t_float point, t_draw *drw, t_data *img)
 {
 	if (drw->dy >= 0)
 	{
@@ -43,12 +45,15 @@ static void	ft_scnd_p(t_float point, t_draw *drw, t_data *img)
 		drw->y = point.y2;
 		drw->ye = point.y1;
 	}
-	ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000);
+	if (!ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000))
+		return (0);
+	return (1);
 }
 
 static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
 {
-	ft_first_p(point, drw, img);
+	if (!ft_first_p(point, drw, img))
+		return ;
 	while (drw->x < drw->xe)
 	{
 		drw->x++;
@@ -68,7 +73,8 @@ static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
 
 static void	ft_line_y(t_float point, t_draw *drw, t_data *img)
 {
-	ft_scnd_p(point, drw, img);
+	if (!ft_scnd_p(point, drw, img))
+		return ;
 	while (drw->y < drw->ye)
 	{
 		drw->y++;

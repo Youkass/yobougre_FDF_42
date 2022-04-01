@@ -35,7 +35,7 @@ void	ft_draw_line(t_float point, t_data *img);
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/algo_1.c                            */
 /* -------------------------------------------------------------------------- */
-t_point ft_to_iso(float x,float y,float z);
+t_point ft_to_iso(float x,float y,float z, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
@@ -43,6 +43,7 @@ void	ft_proj_point(t_data *img);
 /* -------------------------------------------------------------------------- */
 /*                             FILE = srcs/fdf.c                              */
 /* -------------------------------------------------------------------------- */
+void	ft_print(t_data data);
 int	main(void);
 
 /* -------------------------------------------------------------------------- */
@@ -66,7 +67,7 @@ void	ft_free_int_tab(int **tab, int size);
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/mlx_utils_1.c                          */
 /* -------------------------------------------------------------------------- */
-void	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
+int	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/parse_1.c                            */

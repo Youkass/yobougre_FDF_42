@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/31 20:28:37 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:59:49 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static t_point	*ft_fill_t_point(t_data *data, int i, int origin)
 	if (!output)
 		return (NULL);
 	k = 0;
-	origin_y = -8;
+	origin_y = 20;
 	j = 0;
 	while (k < data->map.line_len)
 	{
@@ -48,7 +48,7 @@ t_point	**ft_parse_point(t_data *data)
 	if (!output)
 		return (NULL);
 	i = 0;
-	origin = 5;
+	origin = -10;
 	k = 0;
 	while (i < data->map.col_len)
 	{
