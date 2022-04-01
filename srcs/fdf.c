@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 14:04:57 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:41:48 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	main(void)
 	t_data		img;
 
 	data.mlx = mlx_init();
-	data.mlx_win = mlx_new_window(data.mlx, HEIGHT, WIDTH, "Wassup world");
-	img.img = mlx_new_image(data.mlx , HEIGHT, WIDTH);
+	data.mlx_win = mlx_new_window(data.mlx, WIDTH, HEIGHT, "Wassup world");
+	img.img = mlx_new_image(data.mlx , WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
 	if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map("pyramide.fdf", &img.map))) < 0)
 		return (-1);

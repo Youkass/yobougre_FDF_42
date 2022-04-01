@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 12:34:27 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:41:45 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_first_p(t_float point, t_draw *drw, t_data *img)
 		drw->y = point.y2;
 		drw->xe = point.x1;
 	}
-	if (!ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000))
+	if (!ft_mlx_pixel_put(img, drw->x, drw->y, DEF_COLOR))
 		return (0);
 	return (1);
 }
@@ -45,7 +45,7 @@ static int	ft_scnd_p(t_float point, t_draw *drw, t_data *img)
 		drw->y = point.y2;
 		drw->ye = point.y1;
 	}
-	if (!ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000))
+	if (!ft_mlx_pixel_put(img, drw->x, drw->y, DEF_COLOR))
 		return (0);
 	return (1);
 }
@@ -67,7 +67,7 @@ static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
 				drw->y--;
 			drw->px = drw->px + 2 * (drw->dy1 - drw->dx1);
 		}
-		ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000);
+		ft_mlx_pixel_put(img, drw->x, drw->y, DEF_COLOR);
 	}
 }
 
@@ -88,7 +88,7 @@ static void	ft_line_y(t_float point, t_draw *drw, t_data *img)
 				drw->x--;
 			drw->py = drw->py + 2 * (drw->dx1 - drw->dy1);
 		}
-		ft_mlx_pixel_put(img, drw->x, drw->y, 0x00FF0000);
+		ft_mlx_pixel_put(img, drw->x, drw->y, DEF_COLOR);
 	}
 }
 

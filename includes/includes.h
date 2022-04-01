@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 14:04:58 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:41:47 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <math.h>
 # include "../mlx/mlx.h"
 # include "../libft/libft.h"
-# define HEIGHT 1600
-# define WIDTH 800
+# define HEIGHT 800
+# define WIDTH 1600
+# define DEF_COLOR 0xFFFFFFFF
 
 #endif
