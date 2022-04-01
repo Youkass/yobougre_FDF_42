@@ -6,7 +6,7 @@
 #    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/31 20:28:38 by yobougre         ###   ########.fr        #
+#    Updated: 2022/04/01 19:05:18 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRCS=	srcs/fdf.c\
 		srcs/algo_2.c\
 		srcs/algo_3.c\
 		srcs/parse_2.c\
+		srcs/convert_base.c\
+		srcs/convert_utils.c\
 		srcs/parse_1.c
 
 

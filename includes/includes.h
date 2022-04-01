@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 14:41:47 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:54:34 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 # define HEIGHT 800
 # define WIDTH 1600
 # define DEF_COLOR 0xFFFFFFFF
+# define B_10 "0123456789"
+# define B_HX "0123456789ABCDEF"
 
 #endif

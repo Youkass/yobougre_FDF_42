@@ -34,6 +34,8 @@ void	ft_draw_y(t_data *img)
 		i = 0;
 		while (i < img->map.col_len - 1)
 		{
+			point.color_1 = img->coord[i][j].color;
+			point.color_2 = img->coord[i + 1][j].color;
 			point.x1 = img->coord[i][j].x;
 			point.x2 = img->coord[i + 1][j].x;
 			point.y1 = img->coord[i][j].y;
@@ -57,6 +59,8 @@ void	ft_draw_x(t_data *img)
 		j = 0;
 		while (j < img->map.line_len - 1)
 		{
+			point.color_1 = img->coord[i][j].color;
+			point.color_2 = img->coord[i][j + 1].color;
 			point.x1 = img->coord[i][j].x;
 			point.x2 = img->coord[i][j + 1].x;
 			point.y1 = img->coord[i][j].y;

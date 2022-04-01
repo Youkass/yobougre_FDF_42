@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/29 14:21:38 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:15:21 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_fill_int_tab(t_map_line *map, char **lines)
 	char	**tmp_split;
 	int		i;
 
-	map->lines = malloc(sizeof(int *) * map->col_len);
+	map->lines = malloc(sizeof(t_int *) * map->col_len);
 	if (!map->lines)
 		return (-1);
 	i = 0;

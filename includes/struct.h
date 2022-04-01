@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 14:41:47 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 18:52:10 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
@@ -17,7 +17,14 @@ typedef struct s_point
 	float	x;
 	float	y;
 	float	z;
+	int		color;
 }	t_point;
+
+typedef struct s_int
+{
+	int	val;
+	int	color;
+}	t_int;
 
 typedef struct s_mlx_data
 {
@@ -27,9 +34,9 @@ typedef struct s_mlx_data
 
 typedef struct s_map
 {
-	int	line_len;
-	int	col_len;
-	int	**lines;
+	int		line_len;
+	int		col_len;
+	t_int	**lines;
 }	t_map_line;
 
 typedef struct s_data
@@ -50,6 +57,8 @@ typedef struct s_float
 	float	y1;
 	float	x2;
 	float	y2;
+	int		color_1;
+	int		color_2;
 }	t_float;
 
 typedef struct	s_draw

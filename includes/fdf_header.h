@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prototypes.h                                       :+:      :+:    :+:   */
+/*   fdf_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:05:17 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include "struct.h"
 # include "includes.h"
+
+/* -------------------------------------------------------------------------- */
+/*                         FILE = srcs/convert_base.c                         */
+/* -------------------------------------------------------------------------- */
+int	ft_atoi_base(char *str, char *base);
+void	output_size(int nb, int *size, char *base);
+char	*ft_itoa_base(int nb, char *base, int m_size, char *output);
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
 
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/algo_3.c                            */
@@ -50,7 +58,14 @@ int	main(void);
 /*                            FILE = srcs/utils.c                             */
 /* -------------------------------------------------------------------------- */
 int	ft_tab_size(char **tab);
-int	*ft_fill_lines(char **values);
+t_int	*ft_fill_lines(char **values);
+
+/* -------------------------------------------------------------------------- */
+/*                        FILE = srcs/convert_utils.c                         */
+/* -------------------------------------------------------------------------- */
+int	ft_check(char *base);
+int	check_nbr(char c, char *base);
+int	find_in_base(char c, char *base);
 
 /* -------------------------------------------------------------------------- */
 /*                          FILE = srcs/utils_init.c                          */

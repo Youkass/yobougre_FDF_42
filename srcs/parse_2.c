@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 14:04:58 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/01 18:51:47 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static t_point	*ft_fill_t_point(t_data *data, int i, int origin)
 	j = 0;
 	while (k < data->map.line_len)
 	{
-		output[k].z = data->map.lines[i][j];
+		output[k].z = data->map.lines[i][j].val;
+		output[k].color = data->map.lines[i][j].color;
 		output[k].x = origin_y + 1;
 		output[k].y = origin + 1;
 		++j;
