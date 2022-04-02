@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 19:05:19 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/02 01:51:43 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_int	*ft_fill_lines(char **values)
 			return (ft_free_tab(values), free(output), NULL);
 		output[i].val = ft_atoi(tmp[0]);
 		if (ft_tab_size(tmp) == 2)
-			output[i].color = ft_atoi(ft_convert_base(tmp[1] + 2, B_HX, B_10));
+			output[i].color = ft_atoi(ft_convert_base(tmp[1], B_HX, B_10));
 		else
 			output[i].color = DEF_COLOR;
 		ft_free_tab(tmp);
