@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/02 01:51:43 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/04 10:54:37 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,20 @@ int	ft_tab_size(char **tab)
 		++i;
 	return (i);
 }
+
+static int hextoint(const char *str)
+{
+    int res;
+    char c;
+
+	res = 0;
+    while ((c = *str++)) {
+        char v = ((c & 0xF) + (c >> 6)) | (((c >> 3) & 0x8));
+        res = (res << 4) | (int) v;
+    }
+
+    return res;
+} 
 
 t_int	*ft_fill_lines(char **values)
 {
@@ -41,7 +55,7 @@ t_int	*ft_fill_lines(char **values)
 			return (ft_free_tab(values), free(output), NULL);
 		output[i].val = ft_atoi(tmp[0]);
 		if (ft_tab_size(tmp) == 2)
-			output[i].color = ft_atoi(ft_convert_base(tmp[1], B_HX, B_10));
+			output[i].color = hextoint(tmp[1]);
 		else
 			output[i].color = DEF_COLOR;
 		ft_free_tab(tmp);

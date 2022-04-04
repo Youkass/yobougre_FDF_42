@@ -12,13 +12,14 @@
 
 #include "../includes/fdf_header.h"
 
-t_point ft_to_iso(float x,float y,float z, int scale)
+t_point ft_to_iso(t_point coord, int scale)
 {
 	t_point	output;
 
-	output.x = x - y;
-	output.y = (y + x / 2) - z * scale;
-	output.z = z;
+	output.x = coord.x - coord.y;
+	output.y = (coord.y + coord.x / 2) - coord.z * scale;
+	output.z = coord.z;
+	output.color = coord.color;
 	return (output);
 }
 
@@ -85,8 +86,7 @@ void	ft_proj_point(t_data *img)
 		{
 			img->coord[i][j].x *= img->scale;
 			img->coord[i][j].y *= img->scale;
-			img->coord[i][j] = ft_to_iso(img->coord[i][j].x, 
-					img->coord[i][j].y, img->coord[i][j].z, img->scale);
+			img->coord[i][j] = ft_to_iso(img->coord[i][j], img->scale);
 			++j;
 		}
 		++i;

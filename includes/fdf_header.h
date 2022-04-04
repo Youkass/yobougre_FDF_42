@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/01 19:05:17 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/04 10:35:13 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_draw_line(t_float point, t_data *img);
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/algo_1.c                            */
 /* -------------------------------------------------------------------------- */
-t_point ft_to_iso(float x,float y,float z, int scale);
+t_point ft_to_iso(t_point img, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
