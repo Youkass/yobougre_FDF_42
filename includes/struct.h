@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 13:29:50 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 16:55:21 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_int
 {
 	int	val;
 	int	color;
+	int x;
+	int y;
 }	t_int;
 
 typedef struct s_mlx_data

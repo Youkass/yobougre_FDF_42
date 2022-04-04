@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_header.h                                       :+:      :+:    :+:   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 11:15:19 by hrecolet         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_draw_line(t_float point, t_data *img);
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/algo_1.c                            */
 /* -------------------------------------------------------------------------- */
-t_point ft_to_iso(t_point img, int scale);
+t_point	ft_to_iso(t_point coord, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
@@ -52,6 +52,7 @@ void	ft_proj_point(t_data *img);
 /*                             FILE = srcs/fdf.c                              */
 /* -------------------------------------------------------------------------- */
 void	ft_print(t_data data);
+int	main(int ac, char **av);
 
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/utils.c                             */

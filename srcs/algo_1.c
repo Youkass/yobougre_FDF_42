@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 13:49:58 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 16:55:20 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_point	ft_to_iso(t_point coord, int scale)
 
 	(void)scale;
 	output.x = coord.x - coord.y;
-	output.y = (coord.y + coord.x / 2) - coord.z;
+	output.y = (coord.y + coord.x / 2) - coord.z * 8;
 	output.z = coord.z;
 	output.color = coord.color;
 	return (output);
