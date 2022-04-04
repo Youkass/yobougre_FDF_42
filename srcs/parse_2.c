@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 10:37:42 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:56:12 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_point	**ft_parse_point(t_data *data)
 	if (!output)
 		return (NULL);
 	i = 0;
-	origin = -10;
+	origin = 10;
 	k = 0;
 	while (i < data->map.col_len)
 	{

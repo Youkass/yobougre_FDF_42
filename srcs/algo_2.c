@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 10:37:32 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:37:34 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
 				drw->y--;
 			drw->px = drw->px + 2 * (drw->dy1 - drw->dx1);
 		}
+		//printf("x = %f, y = %f\n", drw->x, drw->y);
 		ft_mlx_pixel_put(img, drw->x, drw->y, point.color_2);
 	}
 }
@@ -88,6 +89,7 @@ static void	ft_line_y(t_float point, t_draw *drw, t_data *img)
 				drw->x--;
 			drw->py = drw->py + 2 * (drw->dx1 - drw->dy1);
 		}
+		//printf("x = %f, y = %f\n", drw->x, drw->y);
 		ft_mlx_pixel_put(img, drw->x, drw->y, point.color_2);
 	}
 }
