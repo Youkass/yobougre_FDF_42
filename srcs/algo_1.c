@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Udraw.pdated: 2022/03/28 14:20:55 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/04 11:08:12 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-t_point ft_to_iso(t_point coord, int scale)
+t_point	ft_to_iso(t_point coord, int scale)
 {
 	t_point	output;
 
@@ -29,7 +29,7 @@ void	ft_draw_y(t_data *img)
 	int		j;
 	t_float	point;
 
-	j = 0; 
+	j = 0;
 	while (j < img->map.line_len)
 	{
 		i = 0;

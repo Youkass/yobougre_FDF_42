@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 10:54:37 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 11:14:43 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,21 @@ int	ft_tab_size(char **tab)
 	return (i);
 }
 
-static int hextoint(const char *str)
+static int	hextoint(const char *str)
 {
-    int res;
-    char c;
+	int		res;
+	char	c;
+	char	v;
 
 	res = 0;
-    while ((c = *str++)) {
-        char v = ((c & 0xF) + (c >> 6)) | (((c >> 3) & 0x8));
-        res = (res << 4) | (int) v;
-    }
-
-    return res;
-} 
+	while (*str)
+	{
+		c = *str++;
+		v = ((c & 0xF) + (c >> 6)) | (((c >> 3) & 0x8));
+		res = (res << 4) | (int) v;
+	}
+	return (res);
+}
 
 t_int	*ft_fill_lines(char **values)
 {

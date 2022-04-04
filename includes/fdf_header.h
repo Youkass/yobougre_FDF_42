@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 10:57:38 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 11:15:19 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,6 @@ t_int	*ft_fill_lines(char **values);
 int	ft_check(char *base);
 int	check_nbr(char c, char *base);
 int	find_in_base(char c, char *base);
-
-/* -------------------------------------------------------------------------- */
-/*                          FILE = srcs/utils_init.c                          */
-/* -------------------------------------------------------------------------- */
-void	ft_init_x(t_float *pos, float seg_size);
-void	ft_init_y(t_float *pos, float seg_size);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/ft_free.c                            */

@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/04 09:21:48 by hrecolet         ###   ########.fr        #
+#    Updated: 2022/04/04 11:15:50 by hrecolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ SRCS=	srcs/fdf.c\
 		srcs/ft_free.c\
 		srcs/utils.c\
 		srcs/algo_1.c\
-		srcs/utils_init.c\
 		srcs/algo_2.c\
 		srcs/algo_3.c\
 		srcs/parse_2.c\

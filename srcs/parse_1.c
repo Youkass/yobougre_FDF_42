@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 11:00:20 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/04 11:17:03 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_read_map(char *name, t_map_line *map)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
-		output = ft_strjoin_pimp(output, line); 
+		output = ft_strjoin_pimp(output, line);
 		if (!output)
 			return (NULL);
 		free(line);
