@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 16:55:19 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:10:28 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,61 +30,63 @@ static t_point	*ft_fill_t_point(t_data *data, int i)
 		output[k].x = data->map.lines[i][j].x;
 		output[k].y = data->map.lines[i][j].y;
 		++j;
-		++k;
+	++k;
 	}
 	return (output);
 }
 
 static void	ft_refill_lines_2(t_int **lines, t_data *data)
 {
-	int i;
-	int	j;
+	t_help	help;
 	
-	i = data->map.line_len / 2;
-	j = data->map.col_len / 2;
-	while (j > 0)
+	help.j = data->map.line_len / 2;
+	help.i = data->map.col_len / 2;
+	help.x = WIDTH / 2;
+	help.y = HEIGHT / 2;
+	while (help.j > 0)
 	{
-		lines[i][j].x--;
-		lines[i][j].y--;
-		--j;
+		lines[help.i][help.j].x = help.x--;
+		lines[help.i][help.j].y = help.y--;
+		help.j--;
 	}
-	while (i-- > 0)
+	while (help.i >= 0)
 	{
-		j = data->map.line_len - 1;
-		while (j > 0)
+		help.j = data->map.line_len - 1;
+		while (help.j >= 0)
 		{
-			lines[i][j].x--;
-			lines[i][j].y--;
-			--j;
+			lines[help.i][help.j].x = help.x--;
+			lines[help.i][help.j].y = help.y--;
+			help.j--;
 		}
-		--i;
+		help.i--;
 	}
 }
 
 static void	ft_refill_lines(t_int **lines, t_data *data)
 {
-	int i;
-	int	j;
+	t_help	help;
 	
-	i = data->map.line_len / 2;
-	j = data->map.col_len / 2;
-	lines[i][j].x = WIDTH / 2;
-	lines[i][j].y = HEIGHT / 2;
-	while (j < data->map.line_len)
+	help.j = data->map.line_len / 2;
+	help.i = data->map.col_len / 2;
+	help.x = WIDTH / 2;
+	help.y = HEIGHT / 2;
+	while (help.j < data->map.line_len)
 	{
-		lines[i][j].x++;
-		lines[i][j].y++;
-		++j;
+		lines[help.i][help.j].x = help.x++;
+		lines[help.i][help.j].y = help.y++;
+		help.j++;
 	}
-	while (i++ < data->map.col_len)
+	help.i++;
+	while (help.i < data->map.col_len)
 	{
-		j = 0;
-		while (j < data->map.line_len)
+		help.j = 0;
+		while (help.j < data->map.line_len)
 		{
-			lines[i][j].x++;
-			lines[i][j].y++;
-			++j;
+			lines[help.i][help.j].x = help.x++;
+			lines[help.i][help.j].y = help.y++;
+			help.j++;
 		}
+		help.i++;
 	}
 	ft_refill_lines_2(lines, data);
 }

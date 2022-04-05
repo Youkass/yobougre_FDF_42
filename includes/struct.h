@@ -6,12 +6,20 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 16:55:21 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 11:28:46 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+typedef struct s_help
+{
+	int	i;
+	int	j;
+	int	x;
+	int	y;
+}	t_help;
 
 typedef struct s_point
 {

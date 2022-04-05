@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 14:29:52 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:10:26 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_print(t_data data)
 		j = 0;
 		while (j < data.map.line_len)
 		{
-			//printf("x : %f   y : %f \n", data.coord[i][j].x, data.coord[i][j].y);
+			printf("x : %f   y : %f \n", data.coord[i][j].x, data.coord[i][j].y);
 			++j;
 		}
 		++i;
@@ -44,6 +44,7 @@ static void	ft_scale(t_data *img)
 	if (res == 0)
 		res = 2;
 	img->scale = res;
+	printf("scale : %d\n", img->scale);
 }
 
 int	main(int ac, char **av)

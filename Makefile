@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/04 11:15:50 by hrecolet         ###   ########.fr        #
+#    Updated: 2022/04/05 12:01:44 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror
+CFLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3
 MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)
