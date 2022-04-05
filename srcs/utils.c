@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 12:54:50 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:43:37 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_int	*ft_fill_lines(char **values)
 	char	**tmp;
 	int		i;
 
-	output = malloc(sizeof(t_int) * ft_tab_size(values));
+	output = malloc(sizeof(t_int) * (ft_tab_size(values) + 200));
 	if (!output)
 		return (NULL);
 	i = 0;

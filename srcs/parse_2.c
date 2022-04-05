@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 16:56:41 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:01:45 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_point	*ft_fill_t_point(t_data *data, int i)
 	int		k;
 	int		j;
 
-	output = malloc(sizeof(t_point) * (data->map.line_len));
+	output = malloc(sizeof(t_point) * (data->map.line_len + 1));
 	if (!output)
 		return (NULL);
 	k = 0;
@@ -45,9 +45,11 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 	{
 		help.j = 0;
 		help.x = WIDTH / 2 - (data->map.line_len * data->scale) / 2;
-		while (help.j < data->map.line_len + 1)
+		while (help.j <= data->map.line_len)
 		{
+			printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
 			lines[help.i][help.j].x = help.x + (data->scale * help.j);
+			printf("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n");
 			lines[help.i][help.j].y = help.y + (data->scale * help.i); 
 			help.x++;
 			help.j++;
@@ -57,6 +59,7 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 		help.y++;
 		help.i++;
 	}
+			printf("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n");
 }
 
 t_point	**ft_parse_point(t_data *data)
