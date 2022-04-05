@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prototypes.h                                       :+:      :+:    :+:   */
+/*   fdf_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:31:39 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
 int	ft_fill_int_tab(t_map_line *map, char **lines);
 char	**ft_split_line(char *line);
 char	*ft_read_map(char *name, t_map_line *map);
+void		initialize_image(t_data *fdf, mlx_data *mlx);
 
 
 #endif

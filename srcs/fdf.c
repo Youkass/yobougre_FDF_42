@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 14:36:06 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:54:10 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,7 @@ int	main(int ac, char **av)
 	{
 		data.mlx = mlx_init();
 		data.mlx_win = mlx_new_window(data.mlx, WIDTH, HEIGHT, "Wassup world");
-		img.img = mlx_new_image(data.mlx , WIDTH, HEIGHT);
-		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
+		initialize_image(&img, &data);
 		if (open(av[1], 0) < 0)
 			return (0);
 		if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map(av[1], &img.map))) < 0)

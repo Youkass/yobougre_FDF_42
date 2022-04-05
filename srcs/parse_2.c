@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 14:52:19 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:55:15 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 	{
 		help.j = 0;
 		help.x = WIDTH / 2 - (data->map.line_len * data->scale) / 2;
-		while (help.j < data->map.line_len)
+		while (help.j < data->map.line_len + 1)
 		{
 			lines[help.i][help.j].x = help.x + (data->scale * help.j);
 			lines[help.i][help.j].y = help.y + (data->scale * help.i); 
