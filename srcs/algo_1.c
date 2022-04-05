@@ -6,11 +6,19 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 14:49:33 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:59:59 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
+
+static int    ft_scale_only_z(t_data *img)
+{
+	int	res;
+	res = (img->map.col_len * img->map.line_len) * 0.015;
+	printf("%d\n", res);
+	return (res);
+}
 
 t_point	ft_to_iso(t_point coord, int scale)
 {
