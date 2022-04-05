@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 13:10:26 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 14:36:06 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	ft_scale(t_data *img)
 	if (res == 0)
 		res = 2;
 	img->scale = res;
-	printf("scale : %d\n", img->scale);
+	printf("scale : %d\n", res);
 }
 
 int	main(int ac, char **av)
@@ -66,7 +66,6 @@ int	main(int ac, char **av)
 		img.coord = ft_parse_point(&img);
 		if (!img.coord)
 			return (-1);
-		ft_print(img);
 		ft_proj_point(&img);
 		ft_print(img);
 		ft_draw_y(&img);

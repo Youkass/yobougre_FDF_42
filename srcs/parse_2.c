@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 13:10:28 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/05 14:52:19 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,60 +35,28 @@ static t_point	*ft_fill_t_point(t_data *data, int i)
 	return (output);
 }
 
-static void	ft_refill_lines_2(t_int **lines, t_data *data)
-{
-	t_help	help;
-	
-	help.j = data->map.line_len / 2;
-	help.i = data->map.col_len / 2;
-	help.x = WIDTH / 2;
-	help.y = HEIGHT / 2;
-	while (help.j > 0)
-	{
-		lines[help.i][help.j].x = help.x--;
-		lines[help.i][help.j].y = help.y--;
-		help.j--;
-	}
-	while (help.i >= 0)
-	{
-		help.j = data->map.line_len - 1;
-		while (help.j >= 0)
-		{
-			lines[help.i][help.j].x = help.x--;
-			lines[help.i][help.j].y = help.y--;
-			help.j--;
-		}
-		help.i--;
-	}
-}
-
 static void	ft_refill_lines(t_int **lines, t_data *data)
 {
 	t_help	help;
 	
-	help.j = data->map.line_len / 2;
-	help.i = data->map.col_len / 2;
-	help.x = WIDTH / 2;
-	help.y = HEIGHT / 2;
-	while (help.j < data->map.line_len)
-	{
-		lines[help.i][help.j].x = help.x++;
-		lines[help.i][help.j].y = help.y++;
-		help.j++;
-	}
-	help.i++;
+	help.i = 0;
+	help.y = HEIGHT / 2 - (data->map.col_len * data->scale) / 2;
 	while (help.i < data->map.col_len)
 	{
 		help.j = 0;
+		help.x = WIDTH / 2 - (data->map.line_len * data->scale) / 2;
 		while (help.j < data->map.line_len)
 		{
-			lines[help.i][help.j].x = help.x++;
-			lines[help.i][help.j].y = help.y++;
+			lines[help.i][help.j].x = help.x + (data->scale * help.j);
+			lines[help.i][help.j].y = help.y + (data->scale * help.i); 
+			help.x++;
 			help.j++;
 		}
+		lines[help.i][help.j - 1].y = help.y + (data->scale * help.i);
+		lines[help.i][help.j - 1].x = help.x + (data->scale * help.j);
+		help.y++;
 		help.i++;
 	}
-	ft_refill_lines_2(lines, data);
 }
 
 t_point	**ft_parse_point(t_data *data)
