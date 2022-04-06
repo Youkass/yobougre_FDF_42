@@ -6,16 +6,18 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 17:24:37 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:23:21 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-static int    ft_scale_only_z(t_data *img)
+int    ft_scale_only_z(t_data *img)
 {
 	int	res;
-	res = (img->map.col_len * img->map.line_len) * 0.015;
+	res = (img->map.col_len * img->map.line_len) * 0.01;
+	if (img->map.col_len > 100 || img->map.line_len > 100)
+		res = 1;
 	printf("%d\n", res);
 	return (res);
 }

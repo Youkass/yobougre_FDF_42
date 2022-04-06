@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 18:01:44 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:13:23 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 		if (!img.coord)
 			return (-1);
 		ft_proj_point(&img);
-		ft_print(img);
+		//ft_print(img);
 		ft_draw_y(&img);
 		ft_draw_x(&img);
 		mlx_put_image_to_window(data.mlx, data.mlx_win, img.img, 0 , 0);

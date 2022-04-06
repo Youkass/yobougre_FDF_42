@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 18:01:45 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:12:22 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_point	*ft_fill_t_point(t_data *data, int i)
 		output[k].x = data->map.lines[i][j].x;
 		output[k].y = data->map.lines[i][j].y;
 		++j;
-	++k;
+		++k;
 	}
 	return (output);
 }
@@ -38,18 +38,21 @@ static t_point	*ft_fill_t_point(t_data *data, int i)
 static void	ft_refill_lines(t_int **lines, t_data *data)
 {
 	t_help	help;
+	float	y;
+	float	x;
 	
 	help.i = 0;
-	help.y = HEIGHT / 2 - (data->map.col_len * data->scale) / 2;
+	y = HEIGHT / 2 - (data->map.col_len * data->scale) / 2;
+	x = WIDTH / 2 - (data->map.line_len * data->scale) / 2;
+	help.y = (y - x / 2) - 150;
+	printf("%d\n", data->scale);
 	while (help.i < data->map.col_len)
 	{
 		help.j = 0;
-		help.x = WIDTH / 2 - (data->map.line_len * data->scale) / 2;
+		help.x = x + y - 425;
 		while (help.j <= data->map.line_len)
 		{
-			printf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n");
 			lines[help.i][help.j].x = help.x + (data->scale * help.j);
-			printf("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n");
 			lines[help.i][help.j].y = help.y + (data->scale * help.i); 
 			help.x++;
 			help.j++;
@@ -59,7 +62,6 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 		help.y++;
 		help.i++;
 	}
-			printf("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n");
 }
 
 t_point	**ft_parse_point(t_data *data)
