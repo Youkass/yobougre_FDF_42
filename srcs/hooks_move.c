@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 54:57:53 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 16:48:40 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:47:41 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	ft_right(mlx_data *data)
 void	ft_escape(mlx_data *data)
 {
 	mlx_destroy_window(data->mlx, data->mlx_win);
+	mlx_destroy_display(data->mlx);
 	ft_free_int_tab((void *)data->img->map.lines, data->img->map.col_len);
 	ft_free_int_tab((void *)data->img->coord, data->img->map.col_len);
 	free(data->mlx);

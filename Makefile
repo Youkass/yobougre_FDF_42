@@ -6,7 +6,7 @@
 #    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/06 16:34:23 by yobougre         ###   ########.fr        #
+#    Updated: 2022/04/06 17:43:24 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3 
+CFLAGS=	-Wall -Wextra -Werror 
 MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)
