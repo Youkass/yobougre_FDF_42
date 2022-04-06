@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
+#    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/06 09:50:10 by hrecolet         ###   ########.fr        #
+#    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
+#    Updated: 2022/04/06 16:34:23 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRCS=	srcs/fdf.c\
 		srcs/mlx_utils_1.c\
@@ -21,6 +22,8 @@ SRCS=	srcs/fdf.c\
 		srcs/convert_base.c\
 		srcs/convert_utils.c\
 		srcs/parse_1.c\
+		srcs/hooks.c\
+		srcs/hooks_move.c\
 		srcs/rotate.c
 
 
@@ -29,7 +32,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror 
+CFLAGS=	-Wall -Wextra -Werror -fsanitize=address -g3 
 MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 16:55:20 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:41:34 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ int	ft_fill_int_tab(t_map_line *map, char **lines)
 
 	map->lines = malloc(sizeof(t_int *) * map->col_len);
 	if (!map->lines)
-		return (-1);
+		return (ft_free_tab(lines), -1);
 	i = 0;
 	while (i < map->col_len)
 	{
 		tmp_split = ft_split(lines[i], ' ');
-		free(lines[i]);
 		if (!tmp_split)
-			return (-1);
+			return (ft_free_tab(lines), -1);
 		map->line_len = ft_tab_size(tmp_split);
 		map->lines[i] = ft_fill_lines(tmp_split);
 		if (!map->lines[i])
-			return (-1);
+			return (ft_free_tab(lines), -1);
 		++i;
 	}
+	ft_free_tab(lines);
 	return (1);
 }
 
@@ -43,7 +43,7 @@ char	**ft_split_line(char *line)
 	output = ft_split(line, '\n');
 	if (!output)
 		return (free(line), NULL);
-	return (output);
+	return (free(line),output);
 }
 
 char	*ft_read_map(char *name, t_map_line *map)

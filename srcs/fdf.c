@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 16:23:14 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 09:13:23 by hrecolet         ###   ########.fr       */
+/*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/06 16:34:49 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../includes/fdf_header.h"
 
@@ -30,7 +31,7 @@ void	ft_print(t_data data)
 	}
 }
 
-static void	ft_scale(t_data *img)
+void	ft_scale(t_data *img)
 {
 	int	res;
 
@@ -44,7 +45,14 @@ static void	ft_scale(t_data *img)
 	if (res == 0)
 		res = 2;
 	img->scale = res;
-	printf("scale : %d\n", res);
+}
+
+void	ft_drawer(mlx_data *data)
+{
+	ft_draw_y(data->img);
+	ft_draw_x(data->img);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img->img, 0 , 0);
+	mlx_destroy_image(data->mlx, data->img->img);
 }
 
 int	main(int ac, char **av)
@@ -61,15 +69,14 @@ int	main(int ac, char **av)
 			return (0);
 		if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map(av[1], &img.map))) < 0)
 			return (-1);
+		data.img = &img;
 		ft_scale(&img);
 		img.coord = ft_parse_point(&img);
 		if (!img.coord)
 			return (-1);
-		ft_proj_point(&img);
-		//ft_print(img);
-		ft_draw_y(&img);
-		ft_draw_x(&img);
-		mlx_put_image_to_window(data.mlx, data.mlx_win, img.img, 0 , 0);
+		ft_proj_point(data.img);
+		ft_drawer(&data);
+		mlx_hook(data.mlx_win, 02, (1L<<0), ft_move, &data);
 		mlx_loop(data.mlx);
 	}
 	return (0);

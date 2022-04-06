@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 09:57:54 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/06 12:38:11 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 int    ft_scale_only_z(t_data *img)
 {
 	int	res;
-	res = (img->map.col_len * img->map.line_len) * 0.01;
+	res = (img->map.col_len * img->map.line_len) * 0.008;
 	if (img->map.col_len > 100 || img->map.line_len > 100)
 		res = 1;
-	printf("%d\n", res);
 	return (res);
 }
 

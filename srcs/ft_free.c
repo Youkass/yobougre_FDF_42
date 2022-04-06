@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:41:11 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 12:24:03 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:31:52 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_free_tab(char **tab)
 	free(tab);
 }
 
-void	ft_free_int_tab(int **tab, int size)
+void	ft_free_int_tab(void **tab, int size)
 {
 	int	i;
 

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:15:07 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 18:01:46 by yobougre         ###   ########.fr       */
+/*   Created: 2022/04/06 11:06:36 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/06 16:29:17 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef STRUCT_H
 # define STRUCT_H
@@ -37,12 +38,6 @@ typedef struct s_int
 	int y;
 }	t_int;
 
-typedef struct s_mlx_data
-{
-	void	*mlx;
-	void	*mlx_win;
-}	mlx_data;
-
 typedef struct s_map
 {
 	int		line_len;
@@ -61,6 +56,13 @@ typedef struct s_data
 	t_point		**coord;
 	t_map_line	map;
 }	t_data;
+
+typedef struct s_mlx_data
+{
+	void	*mlx;
+	void	*mlx_win;
+	t_data	*img;
+}	mlx_data;
 
 typedef struct s_float
 {

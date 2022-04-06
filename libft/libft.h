@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:40:53 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/04 14:11:41 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/06 12:45:32 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# define BUFFER_SIZE 100000
+# define BUFFER_SIZE 1000000
 
 typedef struct s_list
 {

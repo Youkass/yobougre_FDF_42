@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   parse_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 19:22:06 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 09:12:22 by hrecolet         ###   ########.fr       */
+/*   Created: 2022/04/06 11:06:53 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/06 11:40:25 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../includes/fdf_header.h"
 
@@ -44,12 +45,11 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 	help.i = 0;
 	y = HEIGHT / 2 - (data->map.col_len * data->scale) / 2;
 	x = WIDTH / 2 - (data->map.line_len * data->scale) / 2;
-	help.y = (y - x / 2) - 150;
-	printf("%d\n", data->scale);
+	help.y = (y - x / 2) - HEIGHT / 12;
 	while (help.i < data->map.col_len)
 	{
 		help.j = 0;
-		help.x = x + y - 425;
+		help.x = x + y - WIDTH / 4;
 		while (help.j <= data->map.line_len)
 		{
 			lines[help.i][help.j].x = help.x + (data->scale * help.j);
