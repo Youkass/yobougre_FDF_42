@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/06 09:05:08 by hrecolet         ###   ########.fr        #
+#    Updated: 2022/04/06 09:50:10 by hrecolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS=	srcs/fdf.c\
 		srcs/parse_2.c\
 		srcs/convert_base.c\
 		srcs/convert_utils.c\
-		srcs/parse_1.c
+		srcs/parse_1.c\
+		srcs/rotate.c
 
 
 INC=	includes/struct.h\

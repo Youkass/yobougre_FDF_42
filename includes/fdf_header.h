@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/05 15:31:39 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:51:06 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ int	ft_fill_int_tab(t_map_line *map, char **lines);
 char	**ft_split_line(char *line);
 char	*ft_read_map(char *name, t_map_line *map);
 void		initialize_image(t_data *fdf, mlx_data *mlx);
+t_point	ft_rotate_x(t_point coord, int degree);
+t_point	ft_rotate_z(t_point coord, int degree);
+t_point	ft_rotate_y(t_point coord, int degree);
 
 
 #endif
