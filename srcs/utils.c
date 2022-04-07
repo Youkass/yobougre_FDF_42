@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 17:27:27 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 09:40:18 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,29 @@ t_int	*ft_fill_lines(char **values)
 	}
 	ft_free_tab(values);
 	return (output);
+}
+
+t_point	**ft_dup_coord(t_data *data)
+{
+	t_point	**res;
+	int		i;
+	int		j;
+	
+	i = 0;
+	res = malloc(sizeof(t_point *) * data->map.col_len);
+	while (i < data->map.col_len)
+	{
+		j = 0;
+		res[i] = malloc(sizeof(t_point) * data->map.line_len);
+		while (j < data->map.line_len)
+		{
+			res[i][j].x = data->coord[i][j].x;
+			res[i][j].y = data->coord[i][j].y;
+			res[i][j].z = data->coord[i][j].z;
+			res[i][j].color = data->coord[i][j].color;
+			j++;
+		}
+		i++;
+	}
+	return (res);
 }

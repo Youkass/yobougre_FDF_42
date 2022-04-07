@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:36 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 16:29:17 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 10:41:00 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,11 @@ typedef struct s_data
 	int			line_len;
 	int			endian;
 	int			scale;
+	int			x_axis;
+	int			y_axis;
+	int			z_axis;
 	t_point		**coord;
+	t_point		**coord_cart;
 	t_map_line	map;
 }	t_data;
 

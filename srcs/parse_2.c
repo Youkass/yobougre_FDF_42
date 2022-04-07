@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:53 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 11:40:25 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 09:25:17 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 		help.x = x + y - WIDTH / 4;
 		while (help.j <= data->map.line_len)
 		{
-			lines[help.i][help.j].x = help.x + (data->scale * help.j);
-			lines[help.i][help.j].y = help.y + (data->scale * help.i); 
+			lines[help.i][help.j].x = help.x;
+			lines[help.i][help.j].y = help.y; 
 			help.x++;
 			help.j++;
 		}
-		lines[help.i][help.j - 1].y = help.y + (data->scale * help.i);
-		lines[help.i][help.j - 1].x = help.x + (data->scale * help.j);
+		lines[help.i][help.j - 1].y = help.y;
+		lines[help.i][help.j - 1].x = help.x;
 		help.y++;
 		help.i++;
 	}

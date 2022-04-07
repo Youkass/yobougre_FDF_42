@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:32:35 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/06 09:54:30 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/07 10:40:52 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_point	ft_rotate_x(t_point coord, int degree)
 
 	rad = ft_degree_to_rad(degree);
 	res.y = coord.y * cos(rad) + coord.z * sin(rad);
-	res.z = -coord.y * sin(rad) + coord.z * cos(rad);
+	res.z = coord.z * cos(rad) - coord.y * sin(rad);
 	res.x = coord.x;
 	res.color = coord.color;
 	return (res);
@@ -50,7 +50,7 @@ t_point	ft_rotate_y(t_point coord, int degree)
 
 	rad = ft_degree_to_rad(degree);
 	res.x = coord.x * cos(rad) + coord.z * sin(rad);
-	res.z = -coord.x * sin(rad) + coord.z * cos(rad);
+	res.z = coord.z * cos(rad) - coord.x * sin(rad);
 	res.y = coord.y;
 	res.color = coord.color;
 	return (res);

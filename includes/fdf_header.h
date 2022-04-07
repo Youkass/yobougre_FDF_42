@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prototypes.h                                       :+:      :+:    :+:   */
+/*   fdf_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 10:22:41 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 t_point	ft_rotate_x(t_point coord, int degree);
 t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
+void	ft_rotate_x_hooks(mlx_data *data);
+void	ft_rotate_y_hooks(mlx_data *data);
+void	ft_rotate_z_hooks(mlx_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/convert_base.c                         */
@@ -112,5 +115,6 @@ int	ft_fill_int_tab(t_map_line *map, char **lines);
 char	**ft_split_line(char *line);
 char	*ft_read_map(char *name, t_map_line *map);
 
+t_point	**ft_dup_coord(t_data *data); 
 
 #endif

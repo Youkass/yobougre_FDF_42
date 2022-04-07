@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yobougre <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/06 17:43:24 by yobougre         ###   ########.fr        #
+#    Updated: 2022/04/07 10:19:32 by hrecolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS=	srcs/fdf.c\
 		srcs/parse_1.c\
 		srcs/hooks.c\
 		srcs/hooks_move.c\
-		srcs/rotate.c
+		srcs/rotate.c\
+		srcs/rotate_hooks.c
 
 
 INC=	includes/struct.h\
@@ -32,7 +33,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror 
+CFLAGS=	-Wall -Wextra -Werror
 MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)
