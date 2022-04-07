@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 10:34:52 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:52:19 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,6 @@ void	ft_scale(t_data *img)
 	else
 		res = WIDTH / img->map.line_len;
 	res *= 0.20;
-	if (res % 2 == 1)
-		res++;
-	if (res == 0)
-		res = 2;
 	img->scale = res;
 }
 

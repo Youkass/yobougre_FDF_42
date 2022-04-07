@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_header.h                                       :+:      :+:    :+:   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 10:22:41 by hrecolet         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@
 t_point	ft_rotate_x(t_point coord, int degree);
 t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
-void	ft_rotate_x_hooks(mlx_data *data);
-void	ft_rotate_y_hooks(mlx_data *data);
-void	ft_rotate_z_hooks(mlx_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/convert_base.c                         */
@@ -60,6 +57,13 @@ void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
 
 /* -------------------------------------------------------------------------- */
+/*                         FILE = srcs/rotate_hooks.c                         */
+/* -------------------------------------------------------------------------- */
+void	ft_rotate_x_hooks(mlx_data *data);
+void	ft_rotate_y_hooks(mlx_data *data);
+void	ft_rotate_z_hooks(mlx_data *data);
+
+/* -------------------------------------------------------------------------- */
 /*                             FILE = srcs/fdf.c                              */
 /* -------------------------------------------------------------------------- */
 void	ft_print(t_data data);
@@ -72,6 +76,7 @@ int	main(int ac, char **av);
 /* -------------------------------------------------------------------------- */
 int	ft_tab_size(char **tab);
 t_int	*ft_fill_lines(char **values);
+t_point	**ft_dup_coord(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                        FILE = srcs/convert_utils.c                         */
@@ -106,7 +111,7 @@ void	ft_free_int_tab(void **tab, int size);
 /*                         FILE = srcs/mlx_utils_1.c                          */
 /* -------------------------------------------------------------------------- */
 void		initialize_image(t_data *fdf, mlx_data *mlx);
-int	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
+void	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/parse_1.c                            */
@@ -115,6 +120,5 @@ int	ft_fill_int_tab(t_map_line *map, char **lines);
 char	**ft_split_line(char *line);
 char	*ft_read_map(char *name, t_map_line *map);
 
-t_point	**ft_dup_coord(t_data *data); 
 
 #endif

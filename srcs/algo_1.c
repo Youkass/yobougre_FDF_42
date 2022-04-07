@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 11:29:18 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:32:02 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_point	ft_to_iso(t_point coord, int scale)
 
 	(void)scale;
 	output.x = coord.x - coord.y;
-	output.y = (coord.y + coord.x / 2) - coord.z * 2;
+	output.y = (coord.y + coord.x / 2) - coord.z;
 	output.z = coord.z;
 	output.color = coord.color;
 	return (output);
@@ -96,7 +96,6 @@ void	ft_proj_point(t_data *img)
 		{
 			img->coord[i][j].x = img->coord_cart[i][j].x + (img->scale * j) + 1;
 			img->coord[i][j].y = img->coord_cart[i][j].y + (img->scale * i) + 1;
-			img->coord[i][j].z = img->coord_cart[i][j].z + ft_scale_only_z(img);
 			img->coord[i][j] = ft_to_iso(img->coord[i][j], img->scale);
 			++j;
 		}

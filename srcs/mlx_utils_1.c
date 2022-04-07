@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:31:46 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 17:33:01 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:37:50 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static int	index_matr(int row, int column, int map_width)
 	return (row * map_width + column);
 }
 
-int	ft_mlx_pixel_put(t_data *data, float x, float y, int color)
+void	ft_mlx_pixel_put(t_data *data, float x, float y, int color)
 {
 	if (x < 0 || y < 0 || x > WIDTH - 1 || y > HEIGHT)
-		return (0);
+		return ;
 	*(int *)(data->addr + (int)(index_matr(y, x, WIDTH) * data->bpp)) = color;
-	return (1);
+	return ;
 }
