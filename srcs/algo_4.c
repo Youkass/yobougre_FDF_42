@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_3.c                                           :+:      :+:    :+:   */
+/*   algo_4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 17:04:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/08 12:30:54 by yobougre         ###   ########.fr       */
+/*   Created: 2022/04/08 10:34:15 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/08 11:02:46 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-float	ft_abs(float nb)
+int	ft_check_place(t_data *data)
 {
-	if (nb < 0)
-		nb *= -1;
-	return (nb);
-}
+	int	i;
+	int	j;
 
-t_draw	ft_init_draw(t_float point)
-{
-	t_draw	drw;
-
-	drw.dx = point.x2 - point.x1;
-	drw.dy = point.y2 - point.y1;
-	drw.dx1 = ft_abs(drw.dx);
-	drw.dy1 = ft_abs(drw.dy);
-	drw.px = 2 * drw.dy1 - drw.dx1;
-	drw.py = 2 * drw.dx1 - drw.dy1;
-	return (drw);
+	i = data->map.col_len - 1;
+	j = data->map.line_len - 1;
+	if (data->coord[i][j].x > WIDTH)
+		return (1);
+	else if (data->coord[0][j].x > WIDTH)
+		return (2);
+	else if (data->coord[i][0].y > HEIGHT)
+		return (3);
+	else if (data->coord[0][0].y < 0)
+		return (4);
+	return (0);
 }

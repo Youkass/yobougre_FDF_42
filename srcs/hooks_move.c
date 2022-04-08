@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 09:54:20 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/08 12:30:46 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ void	ft_up(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord[i][j].y -=5;
+			data->img->coord_cart[i][j].y -= 5;
+			data->img->coord_cart[i][j].x -= 5;
 			++j;
 		}
 		++i;
 	}
+	ft_proj_point(data->img);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -44,11 +46,13 @@ void	ft_left(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord[i][j].x -=5;
+			data->img->coord_cart[i][j].x -= 5;
+			data->img->coord_cart[i][j].y += 3;
 			++j;
 		}
 		++i;
 	}
+	ft_proj_point(data->img);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -64,11 +68,13 @@ void	ft_down(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord[i][j].y +=5;
+			data->img->coord_cart[i][j].y += 5;
+			data->img->coord_cart[i][j].x += 5;
 			++j;
 		}
 		++i;
 	}
+	ft_proj_point(data->img);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -84,11 +90,13 @@ void	ft_right(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord[i][j].x +=5;
+			data->img->coord_cart[i][j].x += 5;
+			data->img->coord_cart[i][j].y -= 3;
 			++j;
 		}
 		++i;
 	}
+	ft_proj_point(data->img);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
