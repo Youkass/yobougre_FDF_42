@@ -6,13 +6,13 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:32:35 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/07 10:40:52 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:58:15 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-static float	ft_degree_to_rad(int degree)
+float	ft_degree_to_rad(int degree)
 {
 	return (degree * (M_PI / 180.0));
 }
