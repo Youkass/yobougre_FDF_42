@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_header.h                                       :+:      :+:    :+:   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/08 15:00:54 by hrecolet         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/rotate.c                            */
 /* -------------------------------------------------------------------------- */
+float	ft_degree_to_rad(int degree);
 t_point	ft_rotate_x(t_point coord, int degree);
 t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
@@ -62,6 +63,21 @@ void	ft_proj_point(t_data *img);
 void	ft_rotate_x_hooks(mlx_data *data);
 void	ft_rotate_y_hooks(mlx_data *data);
 void	ft_rotate_z_hooks(mlx_data *data);
+
+/* -------------------------------------------------------------------------- */
+/*                         FILE = srcs/move_center.c                          */
+/* -------------------------------------------------------------------------- */
+void	ft_rescale(t_data *data);
+int	ft_check_pos(t_data *data);
+void	ft_move_center(t_data *data);
+
+/* -------------------------------------------------------------------------- */
+/*                         FILE = srcs/utils_center.c                         */
+/* -------------------------------------------------------------------------- */
+void	ft_move_down(t_data *data);
+void	ft_move_up(t_data *data);
+void	ft_move_right(t_data *data);
+void	ft_move_left(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                             FILE = srcs/fdf.c                              */
@@ -108,6 +124,11 @@ void	ft_free_tab(char **tab);
 void	ft_free_int_tab(void **tab, int size);
 
 /* -------------------------------------------------------------------------- */
+/*                            FILE = srcs/algo_4.c                            */
+/* -------------------------------------------------------------------------- */
+int	ft_check_place(t_data *data);
+
+/* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/mlx_utils_1.c                          */
 /* -------------------------------------------------------------------------- */
 void		initialize_image(t_data *fdf, mlx_data *mlx);
@@ -120,6 +141,5 @@ int	ft_fill_int_tab(t_map_line *map, char **lines);
 char	**ft_split_line(char *line);
 char	*ft_read_map(char *name, t_map_line *map);
 
-float	ft_degree_to_rad(int degree);
 
 #endif

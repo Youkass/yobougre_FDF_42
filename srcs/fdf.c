@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 18:43:58 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:34:59 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_print(t_data data)
 		j = 0;
 		while (j < data.map.line_len)
 		{
-			printf("x : %f   y : %f \n", data.coord_cart[i][j].x, data.coord_cart[i][j].y);
+			printf("x : %f   y : %f \n", data.coord[i][j].x, data.coord[i][j].y);
 			++j;
 		}
 		++i;
@@ -40,7 +40,8 @@ void	ft_scale(t_data *img)
 	else
 		res = WIDTH / img->map.line_len;
 	res *= 0.20;
-	img->scale = res;
+	img->o_scale = res;
+	img->scale = 1;
 }
 
 void	ft_drawer(mlx_data *data)
@@ -74,8 +75,9 @@ int	main(int ac, char **av)
 		img.coord_cart = ft_dup_coord(&img);
 		if (!img.coord)
 			return (-1);
-		//ft_print(img);
 		ft_proj_point(data.img);
+		ft_move_center(&img);
+		ft_print(img);
 		ft_drawer(&data);
 		mlx_hook(data.mlx_win, 02, (1L<<0), ft_move, &data);
 		mlx_loop(data.mlx);

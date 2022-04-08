@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/07 10:19:32 by hrecolet         ###   ########.fr        #
+#    Updated: 2022/04/08 16:56:06 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,14 @@ SRCS=	srcs/fdf.c\
 		srcs/hooks.c\
 		srcs/hooks_move.c\
 		srcs/rotate.c\
+		srcs/move_center.c\
+		srcs/utils_center.c\
 		srcs/rotate_hooks.c
 
 
 INC=	includes/struct.h\
-		includes/includes.h
+		includes/includes.h\
+		includes/fdf_header.h
 
 CC=	gcc
 

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:36 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/08 12:30:47 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:35:08 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ typedef struct s_int
 {
 	int	val;
 	int	color;
-	int x;
-	int y;
+	float x;
+	float y;
 }	t_int;
 
 typedef struct s_map
@@ -52,7 +52,7 @@ typedef struct s_data
 	int			bpp;
 	int			line_len;
 	int			endian;
-	int			scale;
+	float		scale;
 	int			x_axis;
 	int			y_axis;
 	int			z_axis;

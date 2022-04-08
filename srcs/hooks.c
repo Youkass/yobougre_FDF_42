@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 18:14:29 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:34:59 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,23 @@ void	ft_scale_up(mlx_data *data)
 {
 	int	i;
 	int	j;
+	int scale;
 
 	i = 0;
-	data->img->scale++;
+	if (data->img->scale <= 0)
+		return ;
+	printf("scale : %f\n", data->img->scale);
+	data->img->scale += 0.01;
+	scale = data->img->scale * O_SCL;
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
 			data->img->coord[i][j].x = data->img->coord[i][j].x + 
-				(data->img->scale * j);
+				(scale * j);
 			data->img->coord[i][j].y = data->img->coord[i][j].y + 
-				(data->img->scale * i);
-			data->img->coord[i][j].z = ft_scale_only_z(data->img);
+				(scale * i);
 			++j;
 		}
 		++i;
@@ -52,17 +56,23 @@ void	ft_scale_down(mlx_data *data)
 {
 	int	i;
 	int	j;
+	int scale;
 
 	i = 0;
-	data->img->scale--;
+	if (data->img->scale - 0.01 <= 0)
+		return ;
+	printf("scale : %f\n", data->img->scale);
+	data->img->scale -= 0.01;
+	scale = data->img->scale * O_SCL;
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord[i][j].x = data->img->coord[i][j].x - (data->img->scale * j);
-			data->img->coord[i][j].y = data->img->coord[i][j].y - (data->img->scale * i);
-			data->img->coord[i][j].z = data->img->coord[i][j].z;
+			data->img->coord[i][j].x = data->img->coord[i][j].x - 
+				(scale * j);
+			data->img->coord[i][j].y = data->img->coord[i][j].y - 
+				(scale * i);
 			++j;
 		}
 		++i;
