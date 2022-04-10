@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:14:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/08 18:35:08 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/10 12:31:50 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@
 # define DEF_COLOR 0xBA55D3
 # define B_10 "0123456789"
 # define B_HX "0123456789ABCDEF"
-# define O_SCL 10
+# define O_SCL 20
 
 #endif
