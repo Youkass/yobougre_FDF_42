@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 10:20:00 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/08 18:14:34 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:08:35 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	ft_rotate_x_hooks(mlx_data *data)
 	int	j;
 
 	i = 0;
-	data->img->x_axis++;	
-	if (data->img->x_axis == 360)
+	data->img->x_axis += 0.05;	
+	if (data->img->x_axis >= 6.05)
 		data->img->x_axis = 0;
+	printf("x_axis : %f\n", data->img->x_axis);
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
@@ -42,8 +43,8 @@ void	ft_rotate_y_hooks(mlx_data *data)
 	int	j;
 
 	i = 0;
-	data->img->y_axis++;
-	if (data->img->y_axis == 360)
+	data->img->y_axis += 0.5;
+	if (data->img->y_axis >= 360)
 		data->img->y_axis = 0;
 	while (i < data->img->map.col_len)
 	{
@@ -66,8 +67,8 @@ void	ft_rotate_z_hooks(mlx_data *data)
 	int	j;
 
 	i = 0;
-	data->img->z_axis++;	
-	if (data->img->z_axis == 360)
+	data->img->z_axis += 0.05;	
+	if (data->img->z_axis >= 360)
 		data->img->z_axis = 0;
 	while (i < data->img->map.col_len)
 	{

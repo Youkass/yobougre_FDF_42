@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:32:35 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/08 14:58:15 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:08:37 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,3 @@ t_point	ft_rotate_y(t_point coord, int degree)
 	res.color = coord.color;
 	return (res);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:36 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/10 14:52:04 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:08:37 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ typedef struct s_data
 	int			line_len;
 	int			endian;
 	float		scale;
-	int			x_axis;
-	int			y_axis;
-	int			z_axis;
+	float		z_axis;
+	float		y_axis;
+	float		x_axis;
 	t_point		**coord;
 	t_point		**coord_cart;
 	t_map_line	map;

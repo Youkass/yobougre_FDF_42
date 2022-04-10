@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 18:43:56 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/10 15:06:58 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	ft_scnd_p(t_float point, t_draw *drw, t_data *img)
 static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
 {
 	ft_first_p(point, drw, img);
-	while (drw->x < drw->xe)
+	while (drw->x < drw->xe - 1)
 	{
 		drw->x++;
 		if (drw->px < 0)
@@ -69,7 +69,7 @@ static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
 static void	ft_line_y(t_float point, t_draw *drw, t_data *img)
 {
 	ft_scnd_p(point, drw, img);
-	while (drw->y < drw->ye)
+	while (drw->y < drw->ye - 1)
 	{
 		drw->y++;
 		if (drw->py <= 0)
