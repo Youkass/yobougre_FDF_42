@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/08 18:34:59 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/11 14:48:18 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,31 @@ void	ft_scale_down(mlx_data *data)
 	ft_drawer(data);
 }
 
+static void	ft_move_z(mlx_data *data, int keycode)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (keycode == 65362)
+		data->img->z_val++;
+	else if(keycode == 65364)
+		data->img->z_val--;
+	while (i < data->img->map.col_len)
+	{
+		j = 0;
+		while (j < data->img->map.line_len)
+		{
+			data->img->coord[i][j].z += data->img->z_val;
+			data->img->coord[i][j].y -= data->img->coord[i][j].z;
+			++j;
+		}
+		++i;
+	}
+	initialize_image(data->img, data);
+	ft_drawer(data);
+}
+
 int	ft_move(int keycode, void *params)
 {
 	if (keycode == 119)
@@ -103,6 +128,8 @@ int	ft_move(int keycode, void *params)
 		ft_rotate_z_hooks(params);
 	else if (keycode == 65307)
 		ft_escape(params);
+	else if (keycode == 65362 || keycode == 65364)
+		ft_move_z(params, keycode);
 	return (0);
 }
 

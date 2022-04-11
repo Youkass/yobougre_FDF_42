@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/11 12:00:05 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/11 15:43:02 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_help	ft_init_center(t_data *data)
 	help.y = HEIGHT / 2;
 	help.i = data->map.col_len / 2;
 	help.j = data->map.line_len / 2;
+	data->z_val = 1;
 	return (help);
 }
 
@@ -78,9 +79,9 @@ int	main(int ac, char **av)
 		if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map(av[1], &img.map))) < 0)
 			return (-1);
 		data.img = &img;
-		img.x_axis = 0;
-		img.y_axis = 0;
-		img.z_axis = 0;
+		img.x_axis = 1;
+		img.y_axis = 1;
+		img.z_axis = 1;
 		ft_scale(&img);
 		img.coord = ft_parse_point(&img);
 		img.coord_cart = ft_dup_coord(&img);

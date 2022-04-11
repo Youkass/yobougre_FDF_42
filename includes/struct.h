@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:36 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/11 12:00:04 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/11 14:01:46 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_data
 	float		z_axis;
 	float		y_axis;
 	float		x_axis;
+	int			z_val;
 	t_point		**coord;
 	t_point		**coord_cart;
 	t_map_line	map;
