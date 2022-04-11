@@ -6,12 +6,23 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/10 16:08:38 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:00:05 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../includes/fdf_header.h"
+
+t_help	ft_init_center(t_data *data)
+{
+	t_help	help;
+
+	help.x = WIDTH / 2;
+	help.y = HEIGHT / 2;
+	help.i = data->map.col_len / 2;
+	help.j = data->map.line_len / 2;
+	return (help);
+}
 
 void	ft_print(t_data data)
 {
@@ -76,7 +87,7 @@ int	main(int ac, char **av)
 		if (!img.coord)
 			return (-1);
 		ft_proj_point(data.img);
-		ft_move_center(&img);
+		ft_move_center(&img, ft_init_center(&img));
 		ft_print(img);
 		ft_drawer(&data);
 		mlx_hook(data.mlx_win, 02, (1L<<0), ft_move, &data);

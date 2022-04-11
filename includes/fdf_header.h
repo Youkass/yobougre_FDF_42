@@ -6,7 +6,7 @@
 /*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/10 14:52:03 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:00:04 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	ft_proj_point(t_data *img);
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/rotate_hooks.c                         */
 /* -------------------------------------------------------------------------- */
+t_help	ft_save_center(t_data *data);
 void	ft_rotate_x_hooks(mlx_data *data);
 void	ft_rotate_y_hooks(mlx_data *data);
 void	ft_rotate_z_hooks(mlx_data *data);
@@ -68,7 +69,7 @@ void	ft_rotate_z_hooks(mlx_data *data);
 /*                         FILE = srcs/move_center.c                          */
 /* -------------------------------------------------------------------------- */
 int	ft_check_pos(t_data *data);
-void	ft_move_center(t_data *data);
+void	ft_move_center(t_data *data, t_help center);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/utils_center.c                         */
@@ -81,6 +82,7 @@ void	ft_move_left(t_data *data);
 /* -------------------------------------------------------------------------- */
 /*                             FILE = srcs/fdf.c                              */
 /* -------------------------------------------------------------------------- */
+t_help	ft_init_center(t_data *data);
 void	ft_print(t_data data);
 void	ft_scale(t_data *img);
 void	ft_drawer(mlx_data *data);

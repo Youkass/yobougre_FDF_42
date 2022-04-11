@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:19:35 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/10 14:52:01 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:00:05 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int ft_diff_x(t_data *data, t_help help)
 	int	diff;
 
 	diff = data->coord[help.i][help.j].x - help.x;
-	if (diff >= -1 && diff <= 1)
+	if (diff == 0)
 		return (1);
 	else
 		return (0);
@@ -28,7 +28,7 @@ static int ft_diff_y(t_data *data, t_help help)
 	int	diff;
 
 	diff = data->coord[help.i][help.j].y - help.y;
-	if (diff >= -1 && diff <= 1)
+	if (diff == 0)
 		return (1);
 	else
 		return (0);
@@ -52,14 +52,11 @@ int	ft_check_pos(t_data *data)
 	return (0);
 }
 
-void	ft_move_center(t_data *data)
+void	ft_move_center(t_data *data, t_help center)
 {
 	t_help	help;
 
-	help.x = WIDTH / 2;
-	help.y = HEIGHT / 2;
-	help.i = data->map.col_len / 2;
-	help.j = data->map.line_len / 2;
+	help = center;
 	while (!ft_diff_x(data, help))
 	{
 		if (help.x > data->coord[help.i][help.j].x)
