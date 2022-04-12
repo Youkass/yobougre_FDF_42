@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/11 15:42:59 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/12 18:20:49 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_point	ft_to_iso(t_point coord, int scale)
 	t_point	output;
 
 	(void)scale;
-	output.x = (coord.x - coord.y) * cos(ft_degree_to_rad(30));
-	output.y = (coord.x + coord.y) * cos(ft_degree_to_rad(30)) + (-coord.z);
+	output.x = (coord.x - coord.y) * cos(ft_degree_to_rad(60));
+	output.y = (coord.x + coord.y) * cos(ft_degree_to_rad(60)) + (-coord.z);
 	output.z = coord.z;
 	output.color = coord.color;
 	return (output);
@@ -94,11 +94,29 @@ void	ft_proj_point(t_data *img)
 		j = 0;
 		while (j < img->map.line_len)
 		{
-			img->coord[i][j].x = img->coord_cart[i][j].x + 
+			img->coord_cart[i][j].x = img->coord_cart[i][j].x + 
 				((O_SCL * img->scale) * (j + 1));
-			img->coord[i][j].y = img->coord_cart[i][j].y + 
+			img->coord_cart[i][j].y = img->coord_cart[i][j].y + 
 				((O_SCL * img->scale) * (i + 1));
-			img->coord[i][j] = ft_to_iso(img->coord[i][j], img->scale);
+			img->coord[i][j] = ft_to_iso(img->coord_cart[i][j], img->scale);
+			++j;
+		}
+		++i;
+	}
+}
+
+void	ft_proj_point_2(t_data *img)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < img->map.col_len)
+	{
+		j = 0;
+		while (j < img->map.line_len)
+		{
+			img->coord[i][j] = ft_to_iso(img->coord_cart[i][j], img->scale);
 			++j;
 		}
 		++i;

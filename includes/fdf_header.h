@@ -6,7 +6,7 @@
 /*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/11 12:00:04 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/12 18:20:47 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_point	ft_to_iso(t_point coord, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
+void	ft_proj_point_2(t_data *img);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/rotate_hooks.c                         */
@@ -68,6 +69,8 @@ void	ft_rotate_z_hooks(mlx_data *data);
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/move_center.c                          */
 /* -------------------------------------------------------------------------- */
+int ft_diff_x(t_data *data, t_help help);
+int ft_diff_y(t_data *data, t_help help);
 int	ft_check_pos(t_data *data);
 void	ft_move_center(t_data *data, t_help center);
 

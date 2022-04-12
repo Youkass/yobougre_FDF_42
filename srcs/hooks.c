@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/11 14:48:18 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:51:50 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,23 +85,27 @@ static void	ft_move_z(mlx_data *data, int keycode)
 {
 	int	i;
 	int	j;
+	t_help	save;
 
 	i = 0;
+	save = ft_save_center(data->img);
 	if (keycode == 65362)
 		data->img->z_val++;
 	else if(keycode == 65364)
 		data->img->z_val--;
+	printf("z_val : %d \n", data->img->z_val);
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord[i][j].z += data->img->z_val;
-			data->img->coord[i][j].y -= data->img->coord[i][j].z;
+			data->img->coord_cart[i][j].z *= data->img->z_val;
 			++j;
 		}
 		++i;
 	}
+	ft_proj_point_2(data->img);
+	ft_move_center(data->img, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
