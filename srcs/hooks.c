@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/12 16:51:50 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/12 18:55:05 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,23 +83,24 @@ void	ft_scale_down(mlx_data *data)
 
 static void	ft_move_z(mlx_data *data, int keycode)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	int		z;
 	t_help	save;
 
 	i = 0;
 	save = ft_save_center(data->img);
 	if (keycode == 65362)
-		data->img->z_val++;
+		z = 1;
 	else if(keycode == 65364)
-		data->img->z_val--;
-	printf("z_val : %d \n", data->img->z_val);
+		z = -1;
+	printf("z_val : %d \n", z);
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord_cart[i][j].z *= data->img->z_val;
+			data->img->coord_cart[i][j].z *= z;
 			++j;
 		}
 		++i;
