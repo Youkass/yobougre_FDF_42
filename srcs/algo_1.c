@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 10:07:37 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:51:17 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ void	ft_proj_point(t_data *img)
 		j = 0;
 		while (j < img->map.line_len)
 		{
-			img->coord_cart[i][j].x = img->coord_cart[i][j].x + 
+			img->coord_cart[i][j].x = img->origin[i][j].x + 
 				((O_SCL * img->scale) * (j + 1));
-			img->coord_cart[i][j].y = img->coord_cart[i][j].y + 
+			img->coord_cart[i][j].y = img->origin[i][j].y + 
 				((O_SCL * img->scale) * (i + 1));
 			img->coord[i][j] = ft_to_iso(img->coord_cart[i][j], img->scale);
 			++j;

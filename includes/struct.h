@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:36 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 09:40:56 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:51:12 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_data
 	int			z_val;
 	t_point		**coord;
 	t_point		**coord_cart;
+	t_point		**origin;
 	t_map_line	map;
 }	t_data;
 

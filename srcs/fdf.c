@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 11:24:28 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:51:14 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,14 @@ int	main(int ac, char **av)
 		if (ft_fill_int_tab(&img.map, ft_split_line(ft_read_map(av[1], &img.map))) < 0)
 			return (-1);
 		data.img = &img;
-		img.x_axis = 1;
-		img.y_axis = 1;
-		img.z_axis = 1;
 		ft_scale(&img);
 		img.coord = ft_parse_point(&img);
 		img.coord_cart = ft_dup_coord(&img);
+		img.origin = ft_dup_coord(&img);
 		if (!img.coord)
 			return (-1);
 		ft_proj_point(data.img);
 		ft_move_center(&img, ft_init_center(&img));
-		//ft_print(img);
 		ft_drawer(&data);
 		mlx_hook(data.mlx_win, 02, (1L<<0), ft_move, &data);
 		mlx_loop(data.mlx);

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 10:47:09 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:51:12 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,12 @@ esc : 65307
 */
 void	ft_scale_up(mlx_data *data)
 {
-	int	i;
-	int	j;
-	int scale;
+	t_help	save;
 
-	i = 0;
-	if (data->img->scale <= 0)
-		return ;
-	data->img->scale += 0.01;
-	scale = data->img->scale * O_SCL;
-	while (i < data->img->map.col_len)
-	{
-		j = 0;
-		while (j < data->img->map.line_len)
-		{
-			data->img->coord[i][j].x = data->img->coord[i][j].x + 
-				(scale * j);
-			data->img->coord[i][j].y = data->img->coord[i][j].y + 
-				(scale * i);
-			++j;
-		}
-		++i;
-	}
+	save = ft_save_center(data->img);
+	data->img->scale += data->img->scale * 0.1;
+	ft_proj_point(data->img);
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -53,28 +37,12 @@ void	ft_scale_up(mlx_data *data)
 
 void	ft_scale_down(mlx_data *data)
 {
-	int	i;
-	int	j;
-	int scale;
+	t_help	save;
 
-	i = 0;
-	if (data->img->scale - 0.01 <= 0)
-		return ;
-	data->img->scale -= 0.01;
-	scale = data->img->scale * O_SCL;
-	while (i < data->img->map.col_len)
-	{
-		j = 0;
-		while (j < data->img->map.line_len)
-		{
-			data->img->coord[i][j].x = data->img->coord[i][j].x - 
-				(scale * j);
-			data->img->coord[i][j].y = data->img->coord[i][j].y - 
-				(scale * i);
-			++j;
-		}
-		++i;
-	}
+	save = ft_save_center(data->img);
+	data->img->scale -= data->img->scale * 0.1;
+	ft_proj_point(data->img);
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -99,7 +67,6 @@ static void	ft_move_z(mlx_data *data, int keycode)
 		{
 			if (data->img->map.lines[i][j].val != 0)
 				data->img->coord_cart[i][j].z += z;
-			//printf("%f\n", data->img->coord_cart[i][j].z);
 			++j;
 		}
 		++i;
