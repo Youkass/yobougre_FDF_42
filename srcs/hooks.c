@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/12 18:55:05 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:51:26 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,8 @@ static void	ft_move_z(mlx_data *data, int keycode)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord_cart[i][j].z *= z;
+			if (data->img->map.lines[i][j].val != 0)
+				data->img->coord_cart[i][j].z += z;
 			++j;
 		}
 		++i;
