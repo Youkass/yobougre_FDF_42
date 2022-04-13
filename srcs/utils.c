@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 10:03:19 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:48:19 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,3 @@ t_point	**ft_dup_coord(t_data *data)
 	}
 	return (res);
 }
-
-
