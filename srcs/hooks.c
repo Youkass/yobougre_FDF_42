@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 10:00:05 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 10:47:09 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_scale_up(mlx_data *data)
 	i = 0;
 	if (data->img->scale <= 0)
 		return ;
-	printf("scale : %f\n", data->img->scale);
 	data->img->scale += 0.01;
 	scale = data->img->scale * O_SCL;
 	while (i < data->img->map.col_len)
@@ -61,7 +60,6 @@ void	ft_scale_down(mlx_data *data)
 	i = 0;
 	if (data->img->scale - 0.01 <= 0)
 		return ;
-	printf("scale : %f\n", data->img->scale);
 	data->img->scale -= 0.01;
 	scale = data->img->scale * O_SCL;
 	while (i < data->img->map.col_len)
@@ -85,7 +83,7 @@ static void	ft_move_z(mlx_data *data, int keycode)
 {
 	int		i;
 	int		j;
-	int		z;
+	float	z;
 	t_help	save;
 
 	i = 0;
@@ -94,7 +92,6 @@ static void	ft_move_z(mlx_data *data, int keycode)
 		z = 1;
 	else if(keycode == 65364)
 		z = -1;
-	printf("z_val : %d \n", z);
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
@@ -102,6 +99,7 @@ static void	ft_move_z(mlx_data *data, int keycode)
 		{
 			if (data->img->map.lines[i][j].val != 0)
 				data->img->coord_cart[i][j].z += z;
+			//printf("%f\n", data->img->coord_cart[i][j].z);
 			++j;
 		}
 		++i;
