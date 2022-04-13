@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 09:51:26 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:54:01 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,10 @@ static void	ft_move_z(mlx_data *data, int keycode)
 	}
 	ft_proj_point_2(data->img);
 	ft_move_center(data->img, save);
+	ft_move_right(data->img);
+	ft_move_down(data->img);
+	if (!ft_diff_x(data->img, save) || !ft_diff_y(data->img, save))
+		ft_move_center(data->img, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
