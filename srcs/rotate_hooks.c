@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 10:20:00 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/13 13:53:25 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:29:12 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	ft_rotate_y_hooks(mlx_data *data)
 		{
 			data->img->coord_cart[i][j] = 
 				ft_rotate_y(data->img->coord_cart[i][j], 5);
+			data->img->origin[i][j] = 
+				ft_rotate_y(data->img->origin[i][j], 5);
 			j++;
 		}
 		i++;
@@ -88,6 +90,8 @@ void	ft_rotate_z_hooks(mlx_data *data)
 		{
 			data->img->coord_cart[i][j] = 
 				ft_rotate_z(data->img->coord_cart[i][j], 5);
+			data->img->origin[i][j] = 
+				ft_rotate_z(data->img->origin[i][j], 5);
 			j++;
 		}
 		i++;

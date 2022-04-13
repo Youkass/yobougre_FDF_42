@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_header.h                                       :+:      :+:    :+:   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 10:00:22 by hrecolet         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:08:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ float	ft_degree_to_rad(int degree);
 t_point	ft_rotate_x(t_point coord, int degree);
 t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
-void	ft_re_center(mlx_data *data, t_help save);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/convert_base.c                         */
@@ -57,6 +56,7 @@ t_point	ft_to_iso(t_point coord, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
+void	ft_proj_scale(t_data *img);
 void	ft_proj_point_2(t_data *img);
 
 /* -------------------------------------------------------------------------- */
@@ -82,6 +82,7 @@ void	ft_move_down(t_data *data);
 void	ft_move_up(t_data *data);
 void	ft_move_right(t_data *data);
 void	ft_move_left(t_data *data);
+void	ft_re_center(mlx_data *data, t_help save);
 
 /* -------------------------------------------------------------------------- */
 /*                             FILE = srcs/fdf.c                              */
@@ -91,6 +92,15 @@ void	ft_print(t_data data);
 void	ft_scale(t_data *img);
 void	ft_drawer(mlx_data *data);
 int	main(int ac, char **av);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = srcs/ft_draw.c                            */
+/* -------------------------------------------------------------------------- */
+void	ft_writeline_x(t_draw *draw, t_data *img);
+void	ft_writeline_y(t_draw *draw, t_data *img);
+void	ft_draw_v(t_float pts, t_draw *draw, t_data *img);
+void	ft_draw_h(t_float pts, t_draw *draw, t_data *img);
+void	ft_draw_2_point(t_float pts, t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/utils.c                             */
