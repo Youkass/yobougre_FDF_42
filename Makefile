@@ -5,24 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/11 16:14:22 by yobougre          #+#    #+#              #
-#    Updated: 2022/03/30 11:55:38 by hrecolet         ###   ########.fr        #
+#    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
+#    Updated: 2022/04/13 09:36:48 by hrecolet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRCS=	srcs/fdf.c\
 		srcs/mlx_utils_1.c\
 		srcs/ft_free.c\
 		srcs/utils.c\
 		srcs/algo_1.c\
-		srcs/utils_init.c\
 		srcs/algo_2.c\
-		srcs/parse_1.c \
-		srcs/parse_2.c
+		srcs/algo_3.c\
+		srcs/parse_2.c\
+		srcs/convert_base.c\
+		srcs/convert_utils.c\
+		srcs/parse_1.c\
+		srcs/hooks.c\
+		srcs/hooks_move.c\
+		srcs/rotate.c\
+		srcs/move_center.c\
+		srcs/utils_center.c\
+		srcs/rotate_hooks.c
 
 
 INC=	includes/struct.h\
-		includes/includes.h
+		includes/includes.h\
+		includes/fdf_header.h
 
 CC=	gcc
 

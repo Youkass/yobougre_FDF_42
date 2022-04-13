@@ -3,116 +3,123 @@
 /*                                                        :::      ::::::::   */
 /*   algo_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:39:20 by yobougre          #+#    #+#             */
-/*   Udraw.pdated: 2022/03/28 14:20:55 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:38:24 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-void	ft_draw_x(t_data *img, float seg_size)
+int    ft_scale_only_z(t_data *img)
 {
-	int		line;
-	int		i;
-	t_float	pos;
-
-	ft_init_x(&pos, seg_size);
-	line = 0;
-	while (line < img->map.col_len)
-	{
-		i = 0;
-		while (i < img->map.line_len - 1)
-		{
-			ft_draw_line_x(&pos, img);
-			pos.x1 += seg_size;
-			pos.x2 = pos.x1 + seg_size;
-			i++;
-		}
-		pos.x1 = WIDTH * 0.1;
-		pos.y1 += seg_size;
-		pos.x2 = pos.x1 + seg_size;
-		pos.y2 = pos.y1;
-		++line;
-	}
+	int	res;
+	res = (img->map.col_len * img->map.line_len) * 0.008;
+	if (img->map.col_len > 100 || img->map.line_len > 100)
+		res = 1;
+	return (res);
 }
 
-/*void	ft_draw_y(t_data *img, float seg_size)
+t_point	ft_to_iso(t_point coord, int scale)
 {
-	t_float	pos;
-	int		i;
-	int		line;
+	t_point	output;
 
-	ft_init_y(&pos, seg_size);
-	line = 0;
-	while (line < img->map.line_len)
+	(void)scale;
+	output.x = (coord.x - coord.y) * cos(ft_degree_to_rad(60));
+	output.y = (coord.x + coord.y) * cos(ft_degree_to_rad(60)) + (-coord.z);
+	printf("z : %f\n", coord.z);
+	output.z = coord.z;
+	output.color = coord.color;
+	return (output);
+}
+
+void	ft_draw_y(t_data *img)
+{
+	int		i;
+	int		j;
+	t_float	point;
+
+	j = 0;
+	while (j < img->map.line_len)
 	{
 		i = 0;
 		while (i < img->map.col_len - 1)
 		{
-			ft_draw_line_y(&pos, img);
-			pos.y1 += seg_size;
-			pos.y2 = pos.y1 + seg_size;
-			i++;
+			point.color_1 = img->coord[i][j].color;
+			point.color_2 = img->coord[i + 1][j].color;
+			point.x1 = img->coord[i][j].x;
+			point.x2 = img->coord[i + 1][j].x;
+			point.y1 = img->coord[i][j].y;
+			point.y2 = img->coord[i + 1][j].y;
+			ft_draw_line(point, img);
+			++i;
 		}
-		pos.y1 = HEIGHT * 0.1;
-		pos.y2 = pos.y1 + seg_size;
-		pos.x1 += seg_size;
-		pos.x2 = pos.x1;
-		++line;
-	}
-}*/
-
-
-void    ft_draw_line_y(t_float *pos, t_data *img)
-{
-	t_draw	draw;	
-
-	draw.dx = pos->x2 - pos->x1;
-	draw.dy = pos->y2 - pos->y1;
-	draw.x = pos->x1;
-	draw.y = pos->y1;
-	draw.p = 2 * draw.dx - draw.dy;
-	while (draw.y < pos->y2)
-	{
-		if (draw.p >= 0)
-		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.x = draw.x + 1;
-			draw.p = draw.p + 2 * draw.dx - 2 * draw.dy;
-		}
-		else
-		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.p = draw.p + 2 * draw.dx;
-		}
-		draw.y++;
+		++j;
 	}
 }
 
-void    ft_draw_line_x(t_float *pos, t_data *img)
+void	ft_draw_x(t_data *img)
 {
-	t_draw	draw;	
+	int		i;
+	int		j;
+	t_float	point;
 
-	draw.dx = pos->x2 - pos->x1;
-	draw.dy = pos->y2 - pos->y1;
-	draw.x = pos->x1;
-	draw.y = pos->y1;
-	draw.p = 2 * draw.dy - draw.dx;
-	while (draw.x < pos->x2)
+	i = 0;
+	while (i < img->map.col_len)
 	{
-		if (draw.p >= 0)
+		j = 0;
+		while (j < img->map.line_len - 1)
 		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.y = draw.y + 1;
-			draw.p = draw.p + 2 * draw.dy - 2 * draw.dx;
+			point.color_1 = img->coord[i][j].color;
+			point.color_2 = img->coord[i][j + 1].color;
+			point.x1 = img->coord[i][j].x;
+			point.x2 = img->coord[i][j + 1].x;
+			point.y1 = img->coord[i][j].y;
+			point.y2 = img->coord[i][j + 1].y;
+			ft_draw_line(point, img);
+			++j;
 		}
-		else
+		++i;
+	}
+}
+
+void	ft_proj_point(t_data *img)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < img->map.col_len)
+	{
+		j = 0;
+		while (j < img->map.line_len)
 		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.p = draw.p + 2 * draw.dy;
+			img->coord_cart[i][j].x = img->coord_cart[i][j].x + 
+				((O_SCL * img->scale) * (j + 1));
+			img->coord_cart[i][j].y = img->coord_cart[i][j].y + 
+				((O_SCL * img->scale) * (i + 1));
+			img->coord[i][j] = ft_to_iso(img->coord_cart[i][j], img->scale);
+			++j;
 		}
-		draw.x++;
+		++i;
+	}
+}
+
+void	ft_proj_point_2(t_data *img)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < img->map.col_len)
+	{
+		j = 0;
+		while (j < img->map.line_len)
+		{
+			img->coord[i][j] = ft_to_iso(img->coord_cart[i][j], img->scale);
+			++j;
+		}
+		++i;
 	}
 }

@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   algo_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 16:41:11 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 16:31:52 by yobougre         ###   ########.fr       */
+/*   Created: 2022/03/31 17:04:20 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/08 12:30:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-void	ft_free_tab(char **tab)
+float	ft_abs(float nb)
 {
-	int	i;
-
-	i = 0;
-	if (!tab)
-		return ;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
+	if (nb < 0)
+		nb *= -1;
+	return (nb);
 }
 
-void	ft_free_int_tab(void **tab, int size)
+t_draw	ft_init_draw(t_float point)
 {
-	int	i;
+	t_draw	drw;
 
-	i = 0;
-	while (i < size)
-		free(tab[i++]);
-	free(tab);
+	drw.dx = point.x2 - point.x1;
+	drw.dy = point.y2 - point.y1;
+	drw.dx1 = ft_abs(drw.dx);
+	drw.dy1 = ft_abs(drw.dy);
+	drw.px = 2 * drw.dy1 - drw.dx1;
+	drw.py = 2 * drw.dx1 - drw.dy1;
+	return (drw);
 }

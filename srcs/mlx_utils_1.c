@@ -3,21 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils_1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:31:46 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/28 15:56:30 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:43:57 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
+void		initialize_image(t_data *fdf, mlx_data *mlx)
+{
+	t_data	*image;
+
+	image = fdf;
+	image->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
+	image->addr = mlx_get_data_addr(image->img, &image->bpp,
+			&image->line_len, &image->endian);
+	image->bpp /= 8;
+}
+
+
+static int	index_matr(int row, int column, int map_width)
+{
+	return (row * map_width + column);
+}
+
 void	ft_mlx_pixel_put(t_data *data, float x, float y, int color)
 {
-	char	*dst;
-
-	if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
+	if (x < 0 || y < 0 || x > WIDTH - 1 || y > HEIGHT)
 		return ;
-	dst = data->addr + (int)(y * data->line_len + x * (data->bpp / 8));
-	*(unsigned int*)dst = color;
+	*(int *)(data->addr + (int)(index_matr(y, x, WIDTH) * data->bpp)) = color;
+	return ;
 }

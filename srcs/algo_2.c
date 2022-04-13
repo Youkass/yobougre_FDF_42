@@ -6,137 +6,93 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:14:21 by yobougre          #+#    #+#             */
-/*   Updated: 2022/03/30 13:59:37 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:37:18 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-t_point  ft_projection(float x, float y, float z)
+static void	ft_first_p(t_float point, t_draw *drw, t_data *img)
 {
-	//int		angle;
-	//int		rad_120;
-	t_point	proj;
-
-	//rad_120 = 120 /** (M_PI / 180.0)*/;
-	//angle = 30 /** (M_PI / 180.0)*/;
-	//printf("%f, %f\n", x, y);
-	//proj.x = x * cos(angle) 
-	//	+ y * cos(angle + rad_120) + z * cos(angle - rad_120);
-	//proj.y = x * sin(angle) 
-	//	+ y * sin(angle + rad_120) + z * sin(angle - rad_120);
-	//proj.y = proj.y * -1;
-	//printf("%f, %f\n", proj.x, proj.y);
-	proj.x = (x - z) / sqrt(2); 
-	proj.y = (x + 2 * y + z) / sqrt(6);
-	return (proj);
+	if (drw->dx >= 0)
+	{
+		drw->x = point.x1;
+		drw->y = point.y1;
+		drw->xe = point.x2;
+	}
+	else
+	{
+		drw->x = point.x2;
+		drw->y = point.y2;
+		drw->xe = point.x1;
+	}
+	ft_mlx_pixel_put(img, drw->x, drw->y, point.color_1);
 }
 
-void	ft_draw_2_point_x(t_float pos, t_data *img)
+static void	ft_scnd_p(t_float point, t_draw *drw, t_data *img)
 {
-	t_draw	draw;	
-
-	draw.dx = pos.x2 - pos.x1;
-	draw.dy = pos.y2 - pos.y1;
-	draw.x = pos.x1;
-	draw.y = pos.y1;
-	draw.p = 2 * draw.dy - draw.dx;
-	while (draw.x < pos.x2)
+	if (drw->dy >= 0)
 	{
-		if (draw.p >= 0)
-		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.y = draw.y + 1;
-			draw.p = draw.p + 2 * draw.dy - 2 * draw.dx;
-		}
+		drw->x = point.x1;
+		drw->y = point.y1;
+		drw->ye = point.y2;
+	}
+	else
+	{
+		drw->x = point.x2;
+		drw->y = point.y2;
+		drw->ye = point.y1;
+	}
+	ft_mlx_pixel_put(img, drw->x, drw->y, point.color_1);
+}
+
+static void	ft_line_x(t_float point, t_draw *drw, t_data *img)
+{
+	ft_first_p(point, drw, img);
+	while (drw->x < drw->xe - 1)
+	{
+		drw->x++;
+		if (drw->px < 0)
+			drw->px = drw->px + 2 * drw->dy1;
 		else
 		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.p = draw.p + 2 * draw.dy;
+			if ((drw->dx < 0 && drw->dy < 0) || (drw->dx > 0 && drw->dy > 0))
+				drw->y++;
+			else
+				drw->y--;
+			drw->px = drw->px + 2 * (drw->dy1 - drw->dx1);
 		}
-		draw.x++;
+		ft_mlx_pixel_put(img, drw->x, drw->y, point.color_2);
 	}
 }
 
-void    ft_draw_2_point_y(t_float pos, t_data *img)
+static void	ft_line_y(t_float point, t_draw *drw, t_data *img)
 {
-	t_draw	draw;	
-
-	draw.dx = pos.x2 - pos.x1;
-	draw.dy = pos.y2 - pos.y1;
-	draw.x = pos.x1;
-	draw.y = pos.y1;
-	draw.p = 2 * draw.dx - draw.dy;
-	while (draw.y < pos.y2)
+	ft_scnd_p(point, drw, img);
+	while (drw->y < drw->ye - 1)
 	{
-		if (draw.p >= 0)
-		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.x = draw.x + 1;
-			draw.p = draw.p + 2 * draw.dx - 2 * draw.dy;
-		}
+		drw->y++;
+		if (drw->py <= 0)
+			drw->py = drw->py + 2 * drw->dx1;
 		else
 		{
-			ft_mlx_pixel_put(img, draw.x, draw.y, 0x00FF0000);
-			draw.p = draw.p + 2 * draw.dx;
+			if ((drw->dx < 0 && drw->dy < 0) || (drw->dx > 0 && drw->dy > 0))
+				drw->x++;
+			else
+				drw->x--;
+			drw->py = drw->py + 2 * (drw->dx1 - drw->dy1);
 		}
-		draw.y++;
+		ft_mlx_pixel_put(img, drw->x, drw->y, point.color_2);
 	}
 }
 
-t_float	ft_conv_to_iso(float x1, float y1, float x2, float y2)
+void	ft_draw_line(t_float point, t_data *img)
 {
-	t_float	iso;
+	t_draw	drw;
 
-	iso.x1 = x1;
-	iso.y1 = y1;
-	iso.x2 = x2;
-	iso.y2 = y2;
-	return (iso);
-}
-
-
-void	ft_draw_y(t_data *data)
-{
-	int	i;
-	int	j;
-	int	scale;
-
-	i = 1;
-	scale = 40;
-	while (i < data->map.col_len)
-	{
-		j = 1;
-		while (j < data->map.line_len + 1)
-		{
-			printf("x: %d,y: %d\n", j*20, i*20);
-			ft_draw_2_point_y(ft_conv_to_iso(j * scale, i * scale, j  * scale, (i + 1) * scale), data);
-			j++;
-		}
-		i++;
-	}
-}
-
-
-void	ft_draw(t_data *data)
-{
-	int	i;
-	int	j;
-	int scale;
-
-	i = 1;
-	scale = 40;
-	while (i < data->map.col_len + 1)
-	{
-		j = 1;
-		while (j < data->map.line_len)
-		{
-			//printf("x: %d,y: %d\n", j*20, i*20);
-			
-			ft_draw_2_point_x(ft_conv_to_iso(j * scale, i * scale, (j + 1) * scale, i * scale), data);
-			j++;
-		}
-		i++;
-	}
-	ft_draw_y(data);
+	drw = ft_init_draw(point);
+	if (drw.dy1 <= drw.dx1)
+		ft_line_x(point, &drw, img);
+	else
+		ft_line_y(point, &drw, img);
 }
