@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 10:30:17 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 11:24:28 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,16 @@ void	ft_scale(t_data *img)
 	printf("WIDTH: %d, HEIGHT: %d\n", WIDTH, HEIGHT);
 	printf("Line_len: %d, Col_len: %d\n", img->map.line_len, img->map.col_len);
 	if (img->map.col_len <= 20 || img->map.line_len <= 20)
-		img->scale = 1;
+		img->scale = 1.5;
 	else if (img->map.col_len <= 50 || img->map.line_len <= 50)
 		img->scale = 0.8;
 	else if (img->map.col_len <= 100 || img->map.line_len <= 100)
-		img->scale = 0.45;
+		img->scale = 0.35;
 	else if (img->map.col_len <= 200 || img->map.line_len <= 200)
-		img->scale = 0.2;
+		img->scale = 0.12;
 	else if (img->map.col_len >= 600 || img->map.line_len >= 600)
 		img->scale = 0.1;
+	img->scale /= (float)HEIGHT / (float)WIDTH * 2;
 	printf("scale : %f\n", img->scale);
 }
 
