@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 10:20:00 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/12 18:32:13 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/13 09:59:54 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,7 @@ void	ft_rotate_x_hooks(mlx_data *data)
 		}
 		i++;
 	}
-	ft_proj_point_2(data->img);
-	ft_move_center(data->img, save);
-	ft_move_right(data->img);
-	ft_move_down(data->img);
-	if (!ft_diff_x(data->img, save) || !ft_diff_y(data->img, save))
-		ft_move_center(data->img, save);
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -71,12 +66,7 @@ void	ft_rotate_y_hooks(mlx_data *data)
 		}
 		i++;
 	}
-	ft_proj_point_2(data->img);
-	ft_move_center(data->img, save);
-	ft_move_right(data->img);
-	ft_move_down(data->img);
-	if (!ft_diff_x(data->img, save) || !ft_diff_y(data->img, save))
-		ft_move_center(data->img, save);
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -100,12 +90,7 @@ void	ft_rotate_z_hooks(mlx_data *data)
 		}
 		i++;
 	}
-	ft_proj_point_2(data->img);
-	ft_move_center(data->img, save);
-	ft_move_right(data->img);
-	ft_move_down(data->img);
-	if (!ft_diff_x(data->img, save) || !ft_diff_y(data->img, save))
-		ft_move_center(data->img, save);
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 09:45:03 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/13 10:00:22 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ float	ft_degree_to_rad(int degree);
 t_point	ft_rotate_x(t_point coord, int degree);
 t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
+void	ft_re_center(mlx_data *data, t_help save);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/convert_base.c                         */

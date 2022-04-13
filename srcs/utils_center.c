@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_center.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:28:10 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/12 17:09:23 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/13 10:03:31 by hrecolet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,14 @@ void	ft_move_left(t_data *data)
 		}
 		++i;
 	}
+}
+
+void	ft_re_center(mlx_data *data, t_help save)
+{
+	ft_proj_point_2(data->img);
+	ft_move_center(data->img, save);
+	ft_move_right(data->img);
+	ft_move_down(data->img);
+	if (!ft_diff_x(data->img, save) || !ft_diff_y(data->img, save))
+		ft_move_center(data->img, save);
 }
