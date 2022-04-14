@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/14 14:49:23 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/14 15:42:23 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,32 @@ void	ft_scale_down(mlx_data *data)
 	ft_drawer(data);
 }
 
+static void	ft_move_z_down(mlx_data *data)
+{
+	int		i;
+	int		j;
+	t_help	save;
+
+	i = 0;
+	save = ft_save_center(data->img);
+	while (i < data->img->map.col_len)
+	{
+		j = 0;
+		while (j < data->img->map.line_len)
+		{
+			if (data->img->map.lines[i][j].val != 0)
+				data->img->coord_cart[i][j].z -= 
+					data->img->coord_cart[i][j].z * 0.1;
+			++j;
+		}
+		++i;
+	}
+	ft_proj_point_2(data->img);
+	ft_re_center(data, save);	
+	initialize_image(data->img, data);
+	ft_drawer(data);
+}
+
 static void	ft_move_z(mlx_data *data, int keycode)
 {
 	int		i;
@@ -57,21 +83,21 @@ static void	ft_move_z(mlx_data *data, int keycode)
 
 	i = 0;
 	save = ft_save_center(data->img);
-	if (keycode == 65362)
-		data->img->z_val += 0.1;
-	else if(keycode == 65364)
-		data->img->z_val -= 0.1;
+	if (keycode == 65364)
+		return (ft_move_z_down(data));
 	while (i < data->img->map.col_len)
 	{
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
 			if (data->img->map.lines[i][j].val != 0)
-				data->img->coord_cart[i][j].z *= data->img->z_val;
+				data->img->coord_cart[i][j].z += 
+					data->img->coord_cart[i][j].z * 0.1;
 			++j;
 		}
 		++i;
 	}
+	ft_proj_point_2(data->img);
 	ft_re_center(data, save);	
 	initialize_image(data->img, data);
 	ft_drawer(data);
