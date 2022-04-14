@@ -56,7 +56,8 @@ t_point	ft_to_iso(t_point coord, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
 void	ft_proj_point(t_data *img);
-void	ft_proj_scale(t_data *img);
+void	ft_proj_scale_up(t_data *img);
+void	ft_proj_scale_down(t_data *img);
 void	ft_proj_point_2(t_data *img);
 
 /* -------------------------------------------------------------------------- */

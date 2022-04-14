@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/14 13:27:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/14 14:49:23 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	ft_scale_up(mlx_data *data)
 
 	save = ft_save_center(data->img);
 	data->img->scale += data->img->scale * 0.1;
-	ft_proj_point(data->img);
+	ft_proj_scale_up(data->img);
+	ft_proj_point_2(data->img);
 	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
@@ -41,7 +42,8 @@ void	ft_scale_down(mlx_data *data)
 
 	save = ft_save_center(data->img);
 	data->img->scale -= data->img->scale * 0.1;
-	ft_proj_point(data->img);
+	ft_proj_scale_down(data->img);
+	ft_proj_point_2(data->img);
 	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
