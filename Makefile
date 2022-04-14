@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/13 09:41:30 by hrecolet         ###   ########.fr        #
+#    Updated: 2022/04/14 13:26:12 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ INC=	includes/struct.h\
 
 CC=	gcc
 
-CFLAGS=	-Wall -Wextra -Werror
+CFLAGS=	-Wall -Wextra -Werror -g3
 MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)

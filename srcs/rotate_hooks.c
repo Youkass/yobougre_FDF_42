@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 10:20:00 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/13 14:29:12 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:21:12 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ void	ft_rotate_x_hooks(mlx_data *data)
 		while (j < data->img->map.line_len)
 		{
 			data->img->coord_cart[i][j] = 
-				ft_rotate_x(data->img->coord_cart[i][j], 5);
+				ft_rotate_x(data->img->coord_cart[i][j], 2);
 			data->img->origin[i][j] = 
-				ft_rotate_x(data->img->origin[i][j], 5);
+				ft_rotate_x(data->img->origin[i][j], 2);
 			j++;
 		}
 		i++;
 	}
+	ft_proj_point_2(data->img);
 	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
@@ -63,13 +64,14 @@ void	ft_rotate_y_hooks(mlx_data *data)
 		while (j < data->img->map.line_len)
 		{
 			data->img->coord_cart[i][j] = 
-				ft_rotate_y(data->img->coord_cart[i][j], 5);
+				ft_rotate_y(data->img->coord_cart[i][j], 2);
 			data->img->origin[i][j] = 
-				ft_rotate_y(data->img->origin[i][j], 5);
+				ft_rotate_y(data->img->origin[i][j], 2);
 			j++;
 		}
 		i++;
 	}
+	ft_proj_point_2(data->img);
 	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
@@ -89,13 +91,14 @@ void	ft_rotate_z_hooks(mlx_data *data)
 		while (j < data->img->map.line_len)
 		{
 			data->img->coord_cart[i][j] = 
-				ft_rotate_z(data->img->coord_cart[i][j], 5);
+				ft_rotate_z(data->img->coord_cart[i][j], 2);
 			data->img->origin[i][j] = 
-				ft_rotate_z(data->img->origin[i][j], 5);
+				ft_rotate_z(data->img->origin[i][j], 2);
 			j++;
 		}
 		i++;
 	}
+	ft_proj_point_2(data->img);
 	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
