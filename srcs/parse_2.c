@@ -6,10 +6,9 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:06:53 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 09:41:23 by hrecolet         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:41:09 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/fdf_header.h"
 
@@ -41,7 +40,7 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 	t_help	help;
 	float	y;
 	float	x;
-	
+
 	help.i = 0;
 	y = HEIGHT / 2 - (data->map.col_len * (O_SCL * data->scale)) / 2;
 	x = WIDTH / 2 - (data->map.line_len * (O_SCL * data->scale)) / 2;
@@ -53,7 +52,7 @@ static void	ft_refill_lines(t_int **lines, t_data *data)
 		while (help.j <= data->map.line_len)
 		{
 			lines[help.i][help.j].x = help.x;
-			lines[help.i][help.j].y = help.y; 
+			lines[help.i][help.j].y = help.y;
 			help.x++;
 			help.j++;
 		}
@@ -80,7 +79,7 @@ t_point	**ft_parse_point(t_data *data)
 	{
 		output[k] = ft_fill_t_point(data, i);
 		if (!output[k])
-			return (NULL); //TODO
+			return (ft_free_int_tab((void *)output, i), NULL);
 		++i;
 		++k;
 	}

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:23:09 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/13 17:18:31 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:50:53 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_point	**ft_dup_coord(t_data *data)
 	t_point	**res;
 	int		i;
 	int		j;
-	
+
 	i = 0;
 	res = malloc(sizeof(t_point *) * data->map.col_len);
 	while (i < data->map.col_len)

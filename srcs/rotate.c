@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 09:32:35 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/12 18:20:49 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:36:25 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ float	ft_degree_to_rad(int degree)
 
 t_point	ft_rotate_x(t_point coord, int degree)
 {
-	t_point res;
+	t_point	res;
 	float	rad;
 
 	rad = ft_degree_to_rad(degree);

@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 10:20:00 by hrecolet          #+#    #+#             */
-/*   Updated: 2022/04/14 14:49:24 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 14:03:56 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_help	ft_save_center(t_data *data)
 {
 	t_help	help;
-	
+
 	help.j = data->map.line_len / 2;
 	help.i = data->map.col_len / 2;
 	help.x = data->coord[help.i][help.j].x;
@@ -23,7 +23,7 @@ t_help	ft_save_center(t_data *data)
 	return (help);
 }
 
-void	ft_rotate_x_hooks(mlx_data *data)
+void	ft_rotate_x_hooks(t_mlx_data *data)
 {
 	int		i;
 	int		j;
@@ -36,10 +36,10 @@ void	ft_rotate_x_hooks(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord_cart[i][j] = 
-				ft_rotate_x(data->img->coord_cart[i][j], 2);
-			data->img->origin[i][j] = 
-				ft_rotate_x(data->img->origin[i][j], 2);
+			data->img->coord_cart[i][j]
+				= ft_rotate_x(data->img->coord_cart[i][j], 2);
+			data->img->origin[i][j]
+				= ft_rotate_x(data->img->origin[i][j], 2);
 			j++;
 		}
 		i++;
@@ -50,10 +50,10 @@ void	ft_rotate_x_hooks(mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_rotate_y_hooks(mlx_data *data)
+void	ft_rotate_y_hooks(t_mlx_data *data)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	t_help	save;
 
 	i = 0;
@@ -63,10 +63,10 @@ void	ft_rotate_y_hooks(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord_cart[i][j] = 
-				ft_rotate_y(data->img->coord_cart[i][j], 2);
-			data->img->origin[i][j] = 
-				ft_rotate_y(data->img->origin[i][j], 2);
+			data->img->coord_cart[i][j]
+				= ft_rotate_y(data->img->coord_cart[i][j], 2);
+			data->img->origin[i][j]
+				= ft_rotate_y(data->img->origin[i][j], 2);
 			j++;
 		}
 		i++;
@@ -77,10 +77,10 @@ void	ft_rotate_y_hooks(mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_rotate_z_hooks(mlx_data *data)
+void	ft_rotate_z_hooks(t_mlx_data *data)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	t_help	save;
 
 	i = 0;
@@ -90,10 +90,10 @@ void	ft_rotate_z_hooks(mlx_data *data)
 		j = 0;
 		while (j < data->img->map.line_len)
 		{
-			data->img->coord_cart[i][j] = 
-				ft_rotate_z(data->img->coord_cart[i][j], 2);
-			data->img->origin[i][j] = 
-				ft_rotate_z(data->img->origin[i][j], 2);
+			data->img->coord_cart[i][j]
+				= ft_rotate_z(data->img->coord_cart[i][j], 2);
+			data->img->origin[i][j]
+				= ft_rotate_z(data->img->origin[i][j], 2);
 			j++;
 		}
 		i++;

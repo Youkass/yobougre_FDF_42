@@ -6,7 +6,7 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/18 13:33:58 by yobougre         ###   ########.fr        #
+#    Updated: 2022/04/18 13:54:18 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 MAIN= 	srcs/main_fdf.c
 
 SRCS=	srcs/mandat_hooks.c\
+		srcs/proj_utils.c\
 		srcs/main_utils.c\
 		srcs/mlx_utils_1.c\
 		srcs/ft_free.c\

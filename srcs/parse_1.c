@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:29:16 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/06 17:41:34 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:53:49 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	**ft_split_line(char *line)
 	output = ft_split(line, '\n');
 	if (!output)
 		return (free(line), NULL);
-	return (free(line),output);
+	return (free(line), output);
 }
 
 char	*ft_read_map(char *name, t_map_line *map)

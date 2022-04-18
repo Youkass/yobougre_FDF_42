@@ -6,7 +6,7 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:28:10 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/14 13:21:17 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:58:09 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_move_left(t_data *data)
 	}
 }
 
-void	ft_re_center(mlx_data *data, t_help save)
+void	ft_re_center(t_mlx_data *data, t_help save)
 {
 	ft_move_center(data->img, save);
 	ft_move_right(data->img);

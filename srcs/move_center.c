@@ -6,13 +6,13 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:19:35 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/12 17:18:04 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:47:59 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-int ft_diff_x(t_data *data, t_help help)
+int	ft_diff_x(t_data *data, t_help help)
 {
 	int	diff;
 
@@ -23,7 +23,7 @@ int ft_diff_x(t_data *data, t_help help)
 		return (0);
 }
 
-int ft_diff_y(t_data *data, t_help help)
+int	ft_diff_y(t_data *data, t_help help)
 {
 	int	diff;
 

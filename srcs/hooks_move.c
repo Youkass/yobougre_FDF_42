@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   hooks_move.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/18 13:34:00 by yobougre         ###   ########.fr       */
+/*   Created: 2022/04/18 13:51:15 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/18 13:58:21 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-void	ft_up(mlx_data *data)
+void	ft_up(t_mlx_data *data)
 
 {
 	int	i;
@@ -33,7 +33,7 @@ void	ft_up(mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_left(mlx_data *data)
+void	ft_left(t_mlx_data *data)
 {
 	int	i;
 	int	j;
@@ -53,7 +53,7 @@ void	ft_left(mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_down(mlx_data *data)
+void	ft_down(t_mlx_data *data)
 {
 	int	i;
 	int	j;
@@ -73,7 +73,7 @@ void	ft_down(mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_right(mlx_data *data)
+void	ft_right(t_mlx_data *data)
 {
 	int	i;
 	int	j;
@@ -93,7 +93,7 @@ void	ft_right(mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_escape(mlx_data *data)
+void	ft_escape(t_mlx_data *data)
 {
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_display(data->mlx);

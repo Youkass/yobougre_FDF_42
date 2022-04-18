@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 12:34:33 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/18 13:34:01 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:59:12 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	ft_scale(t_data *img)
 	img->scale /= (float)HEIGHT / (float)WIDTH * 2;
 }
 
-void	ft_drawer(mlx_data *data)
+void	ft_drawer(t_mlx_data *data)
 {
 	ft_draw_y(data->img);
 	ft_draw_x(data->img);
-	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img->img, 0 , 0);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img->img, 0, 0);
 	mlx_destroy_image(data->mlx, data->img->img);
 }
 
-void	ft_utils(mlx_data *data, t_data *img)
+void	ft_utils(t_mlx_data *data, t_data *img)
 {
 	ft_proj_point(data->img);
 	ft_move_center(img, ft_init_center(img));

@@ -6,13 +6,13 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/18 12:39:43 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:58:32 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-void	ft_scale_up(mlx_data *data)
+void	ft_scale_up(t_mlx_data *data)
 {
 	t_help	save;
 
@@ -25,8 +25,7 @@ void	ft_scale_up(mlx_data *data)
 	ft_drawer(data);
 }
 
-
-void	ft_scale_down(mlx_data *data)
+void	ft_scale_down(t_mlx_data *data)
 {
 	t_help	save;
 
@@ -39,7 +38,7 @@ void	ft_scale_down(mlx_data *data)
 	ft_drawer(data);
 }
 
-static void	ft_move_z_down(mlx_data *data)
+static void	ft_move_z_down(t_mlx_data *data)
 {
 	int		i;
 	int		j;
@@ -53,19 +52,19 @@ static void	ft_move_z_down(mlx_data *data)
 		while (j < data->img->map.line_len)
 		{
 			if (data->img->map.lines[i][j].val != 0)
-				data->img->coord_cart[i][j].z -= 
-					data->img->coord_cart[i][j].z * 0.1;
+				data->img->coord_cart[i][j].z
+					-= data->img->coord_cart[i][j].z * 0.1;
 			++j;
 		}
 		++i;
 	}
 	ft_proj_point_2(data->img);
-	ft_re_center(data, save);	
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
 
-static void	ft_move_z(mlx_data *data, int keycode)
+static void	ft_move_z(t_mlx_data *data, int keycode)
 {
 	int		i;
 	int		j;
@@ -81,14 +80,14 @@ static void	ft_move_z(mlx_data *data, int keycode)
 		while (j < data->img->map.line_len)
 		{
 			if (data->img->map.lines[i][j].val != 0)
-				data->img->coord_cart[i][j].z += 
-					data->img->coord_cart[i][j].z * 0.1;
+				data->img->coord_cart[i][j].z
+					+= data->img->coord_cart[i][j].z * 0.1;
 			++j;
 		}
 		++i;
 	}
 	ft_proj_point_2(data->img);
-	ft_re_center(data, save);	
+	ft_re_center(data, save);
 	initialize_image(data->img, data);
 	ft_drawer(data);
 }
@@ -119,4 +118,3 @@ int	ft_move(int keycode, void *params)
 		ft_move_z(params, keycode);
 	return (0);
 }
-

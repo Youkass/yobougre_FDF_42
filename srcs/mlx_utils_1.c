@@ -6,13 +6,13 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:31:46 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/07 18:43:57 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 13:58:48 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-void		initialize_image(t_data *fdf, mlx_data *mlx)
+void	initialize_image(t_data *fdf, t_mlx_data *mlx)
 {
 	t_data	*image;
 
@@ -22,7 +22,6 @@ void		initialize_image(t_data *fdf, mlx_data *mlx)
 			&image->line_len, &image->endian);
 	image->bpp /= 8;
 }
-
 
 static int	index_matr(int row, int column, int map_width)
 {

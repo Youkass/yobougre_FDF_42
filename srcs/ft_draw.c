@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/18 13:49:14 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/18 13:50:35 by yobougre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fdf_header.h"
 
 void	ft_writeline_x(t_draw *draw, t_data *img)
@@ -9,7 +21,8 @@ void	ft_writeline_x(t_draw *draw, t_data *img)
 			draw->px = draw->px + 2 * draw->dy1;
 		else
 		{
-			if ((draw->dx < 0 && draw->dy < 0) || (draw->dx > 0 && draw->dy > 0))
+			if ((draw->dx < 0 && draw->dy < 0)
+				|| (draw->dx > 0 && draw->dy > 0))
 				draw->y++;
 			else
 				draw->y--;
@@ -28,7 +41,8 @@ void	ft_writeline_y(t_draw *draw, t_data *img)
 			draw->py = draw->py + 2 * draw->dx1;
 		else
 		{
-			if ((draw->dx < 0 && draw->dy < 0) || (draw->dx > 0 && draw->dy > 0))
+			if ((draw->dx < 0 && draw->dy < 0)
+				|| (draw->dx > 0 && draw->dy > 0))
 				draw->x++;
 			else
 				draw->x--;
@@ -74,10 +88,9 @@ void	ft_draw_h(t_float pts, t_draw *draw, t_data *img)
 	ft_writeline_x(draw, img);
 }
 
-
 void	ft_draw_2_point(t_float pts, t_data *data)
 {
-	t_draw draw;
+	t_draw	draw;
 
 	draw.dx = pts.x2 - pts.x1;
 	draw.dy = pts.y2 - pts.y1;
