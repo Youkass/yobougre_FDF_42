@@ -6,7 +6,7 @@
 /*   By: yobougre <yobougre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/18 14:03:54 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:31:54 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ float	ft_degree_to_rad(int degree);
 t_point	ft_rotate_x(t_point coord, int degree);
 t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
+
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/convert_base.c                         */
 /* -------------------------------------------------------------------------- */
@@ -87,6 +88,7 @@ void	ft_move_up(t_data *data);
 void	ft_move_right(t_data *data);
 void	ft_move_left(t_data *data);
 void	ft_re_center(t_mlx_data *data, t_help save);
+
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/ft_draw.c                            */
 /* -------------------------------------------------------------------------- */
@@ -102,12 +104,14 @@ void	ft_draw_2_point(t_float pts, t_data *data);
 int		ft_tab_size(char **tab);
 t_int	*ft_fill_lines(char **values);
 t_point	**ft_dup_coord(t_data *data);
+
 /* -------------------------------------------------------------------------- */
 /*                        FILE = srcs/convert_utils.c                         */
 /* -------------------------------------------------------------------------- */
 int		ft_check(char *base);
 int		check_nbr(char c, char *base);
 int		find_in_base(char c, char *base);
+
 /* -------------------------------------------------------------------------- */
 /*                          FILE = srcs/hooks_move.c                          */
 /* -------------------------------------------------------------------------- */
@@ -115,37 +119,44 @@ void	ft_up(t_mlx_data *data);
 void	ft_left(t_mlx_data *data);
 void	ft_down(t_mlx_data *data);
 void	ft_right(t_mlx_data *data);
-void	ft_escape(t_mlx_data *data);
+int		ft_escape(t_mlx_data *data);
+
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/hooks.c                             */
 /* -------------------------------------------------------------------------- */
 void	ft_scale_up(t_mlx_data *data);
 void	ft_scale_down(t_mlx_data *data);
 int		ft_move(int keycode, void *params);
+
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/ft_free.c                            */
 /* -------------------------------------------------------------------------- */
 void	ft_free_tab(char **tab);
 void	ft_free_int_tab(void **tab, int size);
+
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/algo_4.c                            */
 /* -------------------------------------------------------------------------- */
 int		ft_check_place(t_data *data);
+
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/mlx_utils_1.c                          */
 /* -------------------------------------------------------------------------- */
 void	initialize_image(t_data *fdf, t_mlx_data *mlx);
 void	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
+
 /* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/mandat_hooks.c                         */
 /* -------------------------------------------------------------------------- */
 int		ft_shut(int keycode, void *params);
+
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/parse_1.c                            */
 /* -------------------------------------------------------------------------- */
 int		ft_fill_int_tab(t_map_line *map, char **lines);
 char	**ft_split_line(char *line);
 char	*ft_read_map(char *name, t_map_line *map);
+
 /* -------------------------------------------------------------------------- */
 /*                          FILE = srcs/proj_utils.c                          */
 /* -------------------------------------------------------------------------- */
@@ -153,4 +164,5 @@ int		ft_scale_only_z(t_data *img);
 t_point	ft_to_iso(t_point coord, int scale);
 void	ft_draw_y(t_data *img);
 void	ft_draw_x(t_data *img);
+
 #endif

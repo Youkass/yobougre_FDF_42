@@ -6,7 +6,7 @@
 /*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 13:51:15 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/18 13:58:21 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:32:04 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,15 @@ void	ft_right(t_mlx_data *data)
 	ft_drawer(data);
 }
 
-void	ft_escape(t_mlx_data *data)
+int	ft_escape(t_mlx_data *data)
 {
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_display(data->mlx);
 	ft_free_int_tab((void *)data->img->map.lines, data->img->map.col_len);
 	ft_free_int_tab((void *)data->img->coord, data->img->map.col_len);
+	ft_free_int_tab((void *)data->img->coord_cart, data->img->map.col_len);
+	ft_free_int_tab((void *)data->img->origin, data->img->map.col_len);
 	free(data->mlx);
 	exit(1);
+	return (0);
 }
