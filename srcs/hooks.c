@@ -6,22 +6,12 @@
 /*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:05:32 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/14 17:36:56 by yobougre         ###   ########.fr       */
+/*   Updated: 2022/04/18 12:39:43 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf_header.h"
 
-/*
-w : 119
-a : 97
-s : 115
-d : 100
-esc : 65307
-+ : 61
-- : 45
-
-*/
 void	ft_scale_up(mlx_data *data)
 {
 	t_help	save;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   main_fdf.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yobougre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 11:06:43 by yobougre          #+#    #+#             */
-/*   Updated: 2022/04/18 12:36:45 by yobougre         ###   ########.fr       */
+/*   Created: 2022/04/18 12:15:35 by yobougre          #+#    #+#             */
+/*   Updated: 2022/04/18 13:34:01 by yobougre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 		if (!img.coord)
 			return (-1);
 		ft_utils(&data, &img);
-		mlx_hook(data.mlx_win, 02, (1L<<0), ft_move, &data);
+		mlx_hook(data.mlx_win, 02, (1L<<0), ft_shut, &data);
 		mlx_loop(data.mlx);
 	}
 	return (0);

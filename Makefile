@@ -6,12 +6,15 @@
 #    By: hrecolet <hrecolet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 11:07:05 by yobougre          #+#    #+#              #
-#    Updated: 2022/04/14 13:27:52 by yobougre         ###   ########.fr        #
+#    Updated: 2022/04/18 13:33:58 by yobougre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS=	srcs/fdf.c\
+MAIN= 	srcs/main_fdf.c
+
+SRCS=	srcs/mandat_hooks.c\
+		srcs/main_utils.c\
 		srcs/mlx_utils_1.c\
 		srcs/ft_free.c\
 		srcs/utils.c\
@@ -29,6 +32,9 @@ SRCS=	srcs/fdf.c\
 		srcs/utils_center.c\
 		srcs/rotate_hooks.c
 
+SRCS_BNS= srcs/fdf.c
+		  
+
 
 INC=	includes/struct.h\
 		includes/includes.h\
@@ -41,6 +47,12 @@ MLX= mlx_Linux
 
 OBJS= $(SRCS:.c=.o)
 
+MAIN_OBJS= $(MAIN:.c=.o)
+
+BONUS_OBJS= $(SRCS_BNS:.c=.o)
+
+BONUS_NAME= fdf_bonus
+
 RM= rm -f
 
 NAME= fdf
@@ -51,12 +63,15 @@ NAME= fdf
 
 all: $(NAME)
 
-
-
-$(NAME): $(MLX) $(OBJS) $(INC) 
+$(NAME): $(MLX) $(OBJS) $(INC) $(MAIN_OBJS)
 		 @$(MAKE) -C libft
 		 @echo "fdf : libft compiled"
-		 @$(CC) -g $(CFLAGS) -o $(NAME) $(OBJS) $(INC) libft/libft.a -Lmlx -lmlx_Linux -lXext -lX11 -lm -lz
+		 @$(CC) -g $(CFLAGS) -o $(NAME) $(OBJS) $(MAIN_OBJS) $(INC) libft/libft.a -Lmlx -lmlx_Linux -lXext -lX11 -lm -lz
+		 @echo "fdf : compiled"
+bonus:	$(MLX) $(OBJS) $(INC) $(BONUS_OBJS)
+		 @$(MAKE) -C libft
+		 @echo "fdf : libft compiled"
+		 @$(CC) -g $(CFLAGS) -o $(BONUS_NAME) $(OBJS) $(BONUS_OBJS) $(INC) libft/libft.a -Lmlx -lmlx_Linux -lXext -lX11 -lm -lz
 		 @echo "fdf : compiled"
 
 $(MLX):
@@ -64,13 +79,13 @@ $(MLX):
 		@echo "fdf : minilibx compiled" 
 clean:
 		@$(MAKE) -C libft clean
-		@$(RM) $(OBJS)
+		@$(RM) $(OBJS) $(MAIN_OBJS) $(BONUS_OBJS)
 		cd mlx && ./configure clean
 		@echo "fdf : objects has been erased"
 
 fclean:	clean
 		@$(MAKE) -C libft fclean
-		@$(RM) $(NAME)
+		@$(RM) $(NAME) $(MAIN_OBJS) $(BONUS_OBJS)
 		@echo "fdf : objects and name has been erased"
 
 re: fclean all

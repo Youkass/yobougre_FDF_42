@@ -25,12 +25,25 @@ t_point	ft_rotate_z(t_point coord, int degree);
 t_point	ft_rotate_y(t_point coord, int degree);
 
 /* -------------------------------------------------------------------------- */
+/*                           FILE = srcs/main_fdf.c                           */
+/* -------------------------------------------------------------------------- */
+int	main(int ac, char **av);
+
+/* -------------------------------------------------------------------------- */
 /*                         FILE = srcs/convert_base.c                         */
 /* -------------------------------------------------------------------------- */
 int	ft_atoi_base(char *str, char *base);
 void	output_size(int nb, int *size, char *base);
 char	*ft_itoa_base(int nb, char *base, int m_size, char *output);
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
+
+/* -------------------------------------------------------------------------- */
+/*                          FILE = srcs/main_utils.c                          */
+/* -------------------------------------------------------------------------- */
+t_help	ft_init_center(t_data *data);
+void	ft_scale(t_data *img);
+void	ft_drawer(mlx_data *data);
+void	ft_utils(mlx_data *data, t_data *img);
 
 /* -------------------------------------------------------------------------- */
 /*                            FILE = srcs/algo_3.c                            */
@@ -88,10 +101,6 @@ void	ft_re_center(mlx_data *data, t_help save);
 /* -------------------------------------------------------------------------- */
 /*                             FILE = srcs/fdf.c                              */
 /* -------------------------------------------------------------------------- */
-t_help	ft_init_center(t_data *data);
-void	ft_print(t_data data);
-void	ft_scale(t_data *img);
-void	ft_drawer(mlx_data *data);
 int	main(int ac, char **av);
 
 /* -------------------------------------------------------------------------- */
@@ -149,6 +158,11 @@ int	ft_check_place(t_data *data);
 /* -------------------------------------------------------------------------- */
 void		initialize_image(t_data *fdf, mlx_data *mlx);
 void	ft_mlx_pixel_put(t_data *data, float x, float y, int color);
+
+/* -------------------------------------------------------------------------- */
+/*                         FILE = srcs/mandat_hooks.c                         */
+/* -------------------------------------------------------------------------- */
+int	ft_shut(int keycode, void *params);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = srcs/parse_1.c                            */
